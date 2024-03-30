@@ -155,12 +155,11 @@ class _MainPageState extends State<MainPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(13.0),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(13),
-                        child: Image.asset(
-                          "assets/images/slider_images/smartfone0.jpg",
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                          borderRadius: BorderRadius.circular(13),
+                          child: Image.asset(
+                            "assets/images/slider_images/smartfone0.jpg",
+                            fit: BoxFit.fill,
+                          )),
                     ),
                   ),
                   GestureDetector(
