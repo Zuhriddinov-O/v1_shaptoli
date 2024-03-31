@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:v2shaptoli/pages/poyabzallar/poyabzallar_page.dart';
-import 'package:v2shaptoli/pages/xobbi_va_ijod/xobbi_page.dart';
 import '../../widgets/app_bar_for_categories.dart';
 import '../widgets/cupertino_navigation_bar.dart';
 import 'categories/aksessuarlar/aksessuarlar_page.dart';
 import 'categories/bog_tarmoqlar/bog_page.dart';
-import 'gozallik/gozallik_page.dart';
-import 'kanselyariya_tovarlari/kanselyariya_page.dart';
-import 'kitoblar/kitoblar_page.dart';
-import 'kiyim/kiyim_page.dart';
-import 'maishiy_texnikalar/maishiy_page.dart';
-import 'oziq_ovqat/oziq_ovqat_page.dart';
+import 'categories/gozallik/gozallik_page.dart';
+import 'categories/kanselyariya_tovarlari/kanselyariya_page.dart';
+import 'categories/kitoblar/kitoblar_page.dart';
+import 'categories/kiyim/kiyim_page.dart';
+import 'categories/maishiy_texnikalar/maishiy_page.dart';
+import 'categories/oziq_ovqat/oziq_ovqat_page.dart';
+import 'categories/poyabzallar/poyabzallar_page.dart';
+import 'categories/xobbi_va_ijod/xobbi_page.dart';
 
 class KatalogPage extends StatefulWidget {
   const KatalogPage({super.key});
@@ -31,32 +31,32 @@ class _KatalogPageState extends State<KatalogPage> {
           children: [
             const Gap(5),
             cupertinoListTile(
-                context, "Aksessuarlar", Aksessuarlar(), "assets/images/category_icon/aksessuarlar.png"),
+                context, "Aksessuarlar", const Aksessuarlar(), "assets/images/category_icon/aksessuarlar.png"),
             const Gap(3),
             cupertinoListTile(
-                context, "Bog' va Tomorqa", BogPage(), "assets/images/category_icon/bog_va_tomorqa.png"),
+                context, "Bog' va Tomorqa", const BogPage(), "assets/images/category_icon/bog_va_tomorqa.png"),
             const Gap(3),
             cupertinoListTile(
                 context, "Go'zallik", GozallikPage(), "assets/images/category_icon/gozallik.png"),
             const Gap(3),
             cupertinoListTile(
-                context, "Kanselyariya", KanselyariyaPage(), "assets/images/category_icon/kanselyariya.png"),
+                context, "Kanselyariya", const KanselyariyaPage(), "assets/images/category_icon/kanselyariya.png"),
             const Gap(3),
             cupertinoListTile(
-                context, "Kitoblar", KitoblarPage(), "assets/images/category_icon/kitoblar.png"),
+                context, "Kitoblar", const KitoblarPage(), "assets/images/category_icon/kitoblar.png"),
             const Gap(3),
-            cupertinoListTile(context, "Kiyim", KiyimPage(), "assets/images/category_icon/kiyim.png"),
+            cupertinoListTile(context, "Kiyim", const KiyimPage(), "assets/images/category_icon/kiyim.png"),
             const Gap(3),
-            cupertinoListTile(context, "Maishiy Texnikalar", MaishiyPage(),
+            cupertinoListTile(context, "Maishiy Texnikalar", const MaishiyPage(),
                 "assets/images/category_icon/maishiy_texnikalar.png"),
             const Gap(3),
             cupertinoListTile(
-                context, "Oziq-Ovqat", OziqOvqatPage(), "assets/images/category_icon/oziq_ovqat.png"),
+                context, "Oziq-Ovqat", const OziqOvqatPage(), "assets/images/category_icon/oziq_ovqat.png"),
             const Gap(3),
             cupertinoListTile(
-                context, "Poyabzallar", PoyabzallarPage(), "assets/images/category_icon/poyabzallar.png"),
+                context, "Poyabzallar", const PoyabzallarPage(), "assets/images/category_icon/poyabzallar.png"),
             const Gap(3),
-            cupertinoListTile(context, "Xobbi va Ijod", XobbiPage(), "assets/images/category_icon/xobbi.png"),
+            cupertinoListTile(context, "Xobbi va Ijod", const XobbiPage(), "assets/images/category_icon/xobbi.png"),
           ],
         ));
   }

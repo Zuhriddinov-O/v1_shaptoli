@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
-import '../home/home_page.dart';
+import '../../home/home_page.dart';
 
 class SavatPage extends StatefulWidget {
   const SavatPage({super.key});

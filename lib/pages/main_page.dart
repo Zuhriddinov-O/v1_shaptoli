@@ -6,13 +6,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:v2shaptoli/pages/savat/saved_products_page.dart';
-
 import '../../widgets/scrollable_categories.dart';
 import '../classes/products.dart';
-import 'gozallik/gozallik_page.dart';
-import 'maishiy_texnikalar/maishiy_page.dart';
-import 'oziq_ovqat/oziq_ovqat_page.dart';
+import 'categories/gozallik/gozallik_page.dart';
+import 'categories/maishiy_texnikalar/maishiy_page.dart';
+import 'categories/oziq_ovqat/oziq_ovqat_page.dart';
+import 'categories/savat/saved_products_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

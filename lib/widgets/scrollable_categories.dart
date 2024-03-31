@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../pages/categories/aksessuarlar/aksessuarlar_page.dart';
 import '../pages/categories/bog_tarmoqlar/bog_page.dart';
-import '../pages/gozallik/gozallik_page.dart';
-import '../pages/kanselyariya_tovarlari/kanselyariya_page.dart';
-import '../pages/kitoblar/kitoblar_page.dart';
-import '../pages/kiyim/kiyim_page.dart';
-import '../pages/maishiy_texnikalar/maishiy_page.dart';
-import '../pages/oziq_ovqat/oziq_ovqat_page.dart';
-import '../pages/poyabzallar/poyabzallar_page.dart';
-import '../pages/xobbi_va_ijod/xobbi_page.dart';
+import '../pages/categories/gozallik/gozallik_page.dart';
+import '../pages/categories/kanselyariya_tovarlari/kanselyariya_page.dart';
+import '../pages/categories/kitoblar/kitoblar_page.dart';
+import '../pages/categories/kiyim/kiyim_page.dart';
+import '../pages/categories/maishiy_texnikalar/maishiy_page.dart';
+import '../pages/categories/oziq_ovqat/oziq_ovqat_page.dart';
+import '../pages/categories/poyabzallar/poyabzallar_page.dart';
+import '../pages/categories/xobbi_va_ijod/xobbi_page.dart';
 
 Container singleChildScrollView(BuildContext context) {
   return Container(
@@ -127,7 +126,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Go'zallik",textAlign: TextAlign.center),
+                      const Text("Go'zallik", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -159,7 +158,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Kanselyariya",textAlign: TextAlign.center),
+                      const Text("Kanselyariya", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -191,7 +190,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Kitoblar",textAlign: TextAlign.center),
+                      const Text("Kitoblar", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -223,7 +222,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Kiyimlar",textAlign: TextAlign.center),
+                      const Text("Kiyimlar", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -256,7 +255,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Wrap(children: [Text("Maishiy Texnikalar",textAlign: TextAlign.center)]),
+                      const Wrap(children: [Text("Maishiy Texnikalar", textAlign: TextAlign.center)]),
                     ],
                   ),
                 ),
@@ -289,7 +288,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Oziq Ovqat",textAlign: TextAlign.center),
+                      const Text("Oziq Ovqat", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -321,7 +320,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Poyabzallar",textAlign: TextAlign.center),
+                      const Text("Poyabzallar", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
@@ -353,7 +352,7 @@ Container singleChildScrollView(BuildContext context) {
                           ),
                         ),
                       ),
-                      const Text("Xobbi va Ijod",textAlign: TextAlign.center),
+                      const Text("Xobbi va Ijod", textAlign: TextAlign.center),
                     ],
                   ),
                 ),
