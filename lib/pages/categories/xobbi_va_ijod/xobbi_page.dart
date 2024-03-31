@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../classes/products.dart';
@@ -45,22 +46,29 @@ class _XobbiPageState extends State<XobbiPage> {
                 child: Text("Xobbi va Ijod", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 27))),
             Padding(
                 padding: const EdgeInsets.only(left: 12),
-                child: Text("${filteredList.length} ta tovar", style: const TextStyle(color: Colors.grey, fontSize: 18))),
+                child: Text("${filteredList.length} ta tovar",
+                    style: const TextStyle(color: Colors.grey, fontSize: 18))),
             const Divider(thickness: 0.5),
             Padding(
-              padding: const EdgeInsets.only(left: 10,right: 10),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: SizedBox(
                 height: MediaQuery.of(context).size.height,
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: MediaQuery.of(context).size.width <= 550
                           ? 2
-                          : true && MediaQuery.of(context).size.width <= 750 && MediaQuery.of(context).size.width > 550
-                          ? 3
-                          : true && MediaQuery.of(context).size.width > 750 && MediaQuery.of(context).size.width <= 950
-                          ? 4
-                          : 5,
-                      mainAxisExtent: MediaQuery.of(context).size.height / 1.75,
+                          : true &&
+                                  MediaQuery.of(context).size.width <= 750 &&
+                                  MediaQuery.of(context).size.width > 550
+                              ? 3
+                              : true &&
+                                      MediaQuery.of(context).size.width > 750 &&
+                                      MediaQuery.of(context).size.width <= 950
+                                  ? 4
+                                  : 5,
+                      mainAxisExtent: kIsWeb
+                          ? MediaQuery.of(context).size.width / 1.75
+                          : MediaQuery.of(context).size.width / 1,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),
@@ -77,7 +85,7 @@ class _XobbiPageState extends State<XobbiPage> {
                                 child: Image.network(
                                   item.image,
                                   width: MediaQuery.of(context).size.width,
-                                  height: MediaQuery.of(context).size.height / 2.9,
+                                  height: MediaQuery.of(context).size.height / 3.2,
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -119,11 +127,14 @@ class _XobbiPageState extends State<XobbiPage> {
                                           ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
                                               backgroundColor: saveProduct ? null : Colors.red,
-                                              content: Text(saveProduct ? "Product is added Succesfully" : "Product is removed from the list"),
+                                              content: Text(saveProduct
+                                                  ? "Product is added Succesfully"
+                                                  : "Product is removed from the list"),
                                             ),
                                           );
                                         },
-                                        icon: Image.asset("assets/logos/shopping-bag2.png", width: 30, height: 30, color: Colors.grey),
+                                        icon: Image.asset("assets/logos/shopping-bag2.png",
+                                            width: 30, height: 30, color: Colors.grey),
                                       ),
                                     ],
                                   ),
@@ -140,7 +151,9 @@ class _XobbiPageState extends State<XobbiPage> {
                               AppBar(
                                   centerTitle: true,
                                   title: Text("${item.categoryName} Categoriyasi",
-                                      textScaler: const TextScaler.linear(1.3), style: const TextStyle(fontSize: 16, textBaseline: TextBaseline.ideographic)),
+                                      textScaler: const TextScaler.linear(1.3),
+                                      style: const TextStyle(
+                                          fontSize: 16, textBaseline: TextBaseline.ideographic)),
                                   forceMaterialTransparency: true),
                               Center(
                                 child: Image.network(
@@ -171,11 +184,14 @@ class _XobbiPageState extends State<XobbiPage> {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
                                             backgroundColor: saveProduct ? null : Colors.red,
-                                            content: Text(saveProduct ? "Product is added Succesfully" : "Product is removed from the list"),
+                                            content: Text(saveProduct
+                                                ? "Product is added Succesfully"
+                                                : "Product is removed from the list"),
                                           ),
                                         );
                                       },
-                                      icon: Image.asset("assets/logos/shopping-bag2.png", width: 30, height: 30, color: Colors.grey),
+                                      icon: Image.asset("assets/logos/shopping-bag2.png",
+                                          width: 30, height: 30, color: Colors.grey),
                                     ),
                                   ],
                                 ),
@@ -193,11 +209,13 @@ class _XobbiPageState extends State<XobbiPage> {
                                       children: [
                                         Container(
                                           color: const Color(0xFF7000FE),
-                                          child: const Text("Ekskluziv", style: TextStyle(color: Colors.white)),
+                                          child:
+                                              const Text("Ekskluziv", style: TextStyle(color: Colors.white)),
                                         ),
                                         Container(
                                           color: const Color(0xFFFCB0D4),
-                                          child: const Text("Sevimli tovarlar", style: TextStyle(color: Colors.white)),
+                                          child: const Text("Sevimli tovarlar",
+                                              style: TextStyle(color: Colors.white)),
                                         ),
                                         Container(
                                           color: const Color(0xFF3B007D),

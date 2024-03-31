@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:animations/animations.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -48,6 +49,11 @@ class _MainPageState extends State<MainPage> {
         filteredList.add(element);
       }
     }
+    for (var element in productList) {
+      if (element.rating >= 4.5) {
+        sortedList.add(element);
+      }
+    }
     super.initState();
   }
 
@@ -59,14 +65,16 @@ class _MainPageState extends State<MainPage> {
   }
 
   List<Product> filteredList = [];
+  List<Product> sortedList = [];
 
   void runFiltered(String query) {
     List<Product> result = [];
     if (query.isEmpty) {
       result = productList;
     } else {
-      result =
-          productList.where((element) => element.name.toLowerCase().contains(query.toLowerCase())).toList();
+      result = productList
+          .where((element) => element.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
     }
     setState(() {
       foundProducts = result;
@@ -282,11 +290,8 @@ class _MainPageState extends State<MainPage> {
                   Text("Tavsiyalar"),
                 ],
                 views: [
-                  _container(),
-                  Container(
-                    color: Colors.blueGrey,
-                    child: const Center(child: Text("Add up from Backed end page 2")),
-                  ),
+                  _container1(),
+                  _container2(),
                 ],
               ),
             )
@@ -296,18 +301,25 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _container() {
+  Widget _container1() {
     return GridView.builder(
-      padding: EdgeInsets.all(MediaQuery.of(context).size.width / 80),
+      padding: EdgeInsets.all(
+          kIsWeb ? MediaQuery.of(context).size.width / 80 : MediaQuery.of(context).size.width / 25),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: MediaQuery.of(context).size.width <= 550
             ? 2
-            : true && MediaQuery.of(context).size.width <= 750 && MediaQuery.of(context).size.width > 550
+            : true &&
+                    MediaQuery.of(context).size.width <= 750 &&
+                    MediaQuery.of(context).size.width > 550
                 ? 3
-                : true && MediaQuery.of(context).size.width > 750 && MediaQuery.of(context).size.width <= 950
+                : true &&
+                        MediaQuery.of(context).size.width > 750 &&
+                        MediaQuery.of(context).size.width <= 950
                     ? 4
                     : 5,
-        mainAxisExtent: MediaQuery.of(context).size.height / 1.75,
+        mainAxisExtent: kIsWeb
+            ? MediaQuery.of(context).size.width / 1.75
+            : MediaQuery.of(context).size.width / 1,
         crossAxisSpacing: 12,
         mainAxisSpacing: 12,
       ),
@@ -393,7 +405,8 @@ class _MainPageState extends State<MainPage> {
                       centerTitle: true,
                       title: Text("${items.categoryName} Categoriyasi",
                           textScaler: const TextScaler.linear(1.3),
-                          style: const TextStyle(fontSize: 16, textBaseline: TextBaseline.ideographic)),
+                          style: const TextStyle(
+                              fontSize: 16, textBaseline: TextBaseline.ideographic)),
                       forceMaterialTransparency: true),
                   Center(
                     child: Image.network(
@@ -446,22 +459,16 @@ class _MainPageState extends State<MainPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 10, left: 10),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: [
-                              Text("${items.discount} so'm / birlik",
-                                  style: const TextStyle(color: Color(0xFF7000FE), fontSize: 27)),
-                              const Gap(100),
-                              Text(
-                                "${items.price} so'm",
-                                style: TextStyle(color: Colors.grey[900]),
-                              ),
-                            ],
-                          ),
+                        Text("${items.discount} so'm / birlik",
+                            style: const TextStyle(color: Color(0xFF7000FE), fontSize: 21)),
+                        const Gap(20),
+                        Text(
+                          "${items.price} so'm",
+                          style: TextStyle(
+                              color: Colors.grey[900],
+                              fontSize: 13,
+                              decoration: TextDecoration.lineThrough),
                         ),
                       ],
                     ),
@@ -480,7 +487,8 @@ class _MainPageState extends State<MainPage> {
                                 borderRadius: BorderRadius.circular(3),
                                 child: Container(
                                   color: const Color(0xFF7000FE),
-                                  child: const Text("Ekskluziv", style: TextStyle(color: Colors.white)),
+                                  child: const Text("Ekskluziv",
+                                      style: TextStyle(color: Colors.white)),
                                 ),
                               ),
                               const Gap(3),
@@ -488,8 +496,8 @@ class _MainPageState extends State<MainPage> {
                                 borderRadius: BorderRadius.circular(3),
                                 child: Container(
                                   color: const Color(0xFFFCB0D4),
-                                  child:
-                                      const Text("Sevimli tovarlar", style: TextStyle(color: Colors.white)),
+                                  child: const Text("Sevimli tovarlar",
+                                      style: TextStyle(color: Colors.white)),
                                 ),
                               ),
                               const Gap(3),
@@ -497,7 +505,8 @@ class _MainPageState extends State<MainPage> {
                                 borderRadius: BorderRadius.circular(3),
                                 child: Container(
                                   color: const Color(0xFF3B007D),
-                                  child: const Text("Aksiya", style: TextStyle(color: Colors.white)),
+                                  child:
+                                      const Text("Aksiya", style: TextStyle(color: Colors.white)),
                                 ),
                               ),
                             ],
@@ -518,19 +527,21 @@ class _MainPageState extends State<MainPage> {
                             const Text("Yetkazib"),
                             IconButton(
                                 onPressed: () {
-                                  Builder(
-                                    builder: (context) {
-                                      return const AboutDialog(
-                                        children: [Text("data")],
-                                      );
-                                    },
-                                  );
+                                  setState(() {
+                                    showAdaptiveDialog(
+                                        barrierColor: Colors.transparent,
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return const AboutDialog(children: [Text("Info")]);
+                                        });
+                                  });
                                 },
                                 icon: const Icon(Icons.info))
                           ],
                         ),
                         const Text("berish:"),
                         const Text("1 kun, bepul"),
+                        const Divider(),
                       ],
                     ),
                   ),
@@ -547,29 +558,32 @@ class _MainPageState extends State<MainPage> {
                     child: Text("O'xshash Maxsulotlar", style: TextStyle(fontSize: 25)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 40),
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height,
                       child: GridView.builder(
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: MediaQuery.of(context).size.width <= 550
-                                ? 2
-                                : true &&
-                                        MediaQuery.of(context).size.width <= 750 &&
-                                        MediaQuery.of(context).size.width > 550
-                                    ? 3
-                                    : true &&
-                                            MediaQuery.of(context).size.width > 750 &&
-                                            MediaQuery.of(context).size.width <= 950
-                                        ? 4
-                                        : 5,
-                            mainAxisExtent: MediaQuery.of(context).size.height / 1.75,
-                            crossAxisSpacing: 12,
-                            mainAxisSpacing: 12,
-                          ),
-                          itemCount: filteredList.length,
-                          itemBuilder: (context, index) {
-                            return OpenContainer(closedBuilder: (BuildContext context, action) {
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: MediaQuery.of(context).size.width <= 550
+                              ? 2
+                              : true &&
+                                      MediaQuery.of(context).size.width <= 750 &&
+                                      MediaQuery.of(context).size.width > 550
+                                  ? 3
+                                  : true &&
+                                          MediaQuery.of(context).size.width > 750 &&
+                                          MediaQuery.of(context).size.width <= 950
+                                      ? 4
+                                      : 5,
+                          mainAxisExtent: kIsWeb
+                              ? MediaQuery.of(context).size.height / 1.75
+                              : MediaQuery.of(context).size.height / 2.37,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                        ),
+                        itemCount: filteredList.length,
+                        itemBuilder: (context, index) {
+                          return OpenContainer(
+                            closedBuilder: (BuildContext context, action) {
                               final item = filteredList[index];
                               item.categoryName = itemName;
                               print("close builder $itemName");
@@ -582,7 +596,7 @@ class _MainPageState extends State<MainPage> {
                                       child: Image.network(
                                         item.image,
                                         width: MediaQuery.of(context).size.width,
-                                        height: MediaQuery.of(context).size.height / 2.9,
+                                        height: MediaQuery.of(context).size.height / 3.7,
                                         fit: BoxFit.fill,
                                       ),
                                     ),
@@ -608,7 +622,8 @@ class _MainPageState extends State<MainPage> {
                                           alignment: Alignment.centerLeft,
                                           child: Text(
                                             "${item.price} so'm",
-                                            style: const TextStyle(decoration: TextDecoration.lineThrough),
+                                            style: const TextStyle(
+                                                decoration: TextDecoration.lineThrough),
                                           ),
                                         ),
                                         Row(
@@ -623,7 +638,8 @@ class _MainPageState extends State<MainPage> {
                                                 saveProduct = !saveProduct;
                                                 ScaffoldMessenger.of(context).showSnackBar(
                                                   SnackBar(
-                                                    backgroundColor: saveProduct ? null : Colors.red,
+                                                    backgroundColor:
+                                                        saveProduct ? null : Colors.red,
                                                     content: Text(saveProduct
                                                         ? "Product is added Succesfully"
                                                         : "Product is removed from the list"),
@@ -640,8 +656,9 @@ class _MainPageState extends State<MainPage> {
                                   ),
                                 ],
                               );
-                            }, openBuilder:
-                                (BuildContext context, void Function({Object? returnValue}) action) {
+                            },
+                            openBuilder: (BuildContext context,
+                                void Function({Object? returnValue}) action) {
                               final item = filteredList[index];
                               item.categoryName = itemName;
                               print("open builder $itemName");
@@ -653,7 +670,8 @@ class _MainPageState extends State<MainPage> {
                                         title: Text("${item.categoryName} Categoriyasi",
                                             textScaler: const TextScaler.linear(1.3),
                                             style: const TextStyle(
-                                                fontSize: 16, textBaseline: TextBaseline.ideographic)),
+                                                fontSize: 16,
+                                                textBaseline: TextBaseline.ideographic)),
                                         forceMaterialTransparency: true),
                                     Center(
                                       child: Image.network(
@@ -663,7 +681,8 @@ class _MainPageState extends State<MainPage> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                                      padding:
+                                          const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -672,7 +691,8 @@ class _MainPageState extends State<MainPage> {
                                             flex: 2,
                                             child: Row(
                                               children: [
-                                                Image.asset("assets/logos/star.png", width: 13, height: 13),
+                                                Image.asset("assets/logos/star.png",
+                                                    width: 13, height: 13),
                                                 Text(
                                                     "${item.rating} ( 7803 baho ) ${item.count} ta buyurtma"),
                                               ],
@@ -731,16 +751,489 @@ class _MainPageState extends State<MainPage> {
                                   ],
                                 ),
                               );
-                            });
-                          }),
+                            },
+                          );
+                        },
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             );
           },
         );
       },
+    );
+  }
+
+  Widget _container2() {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: MediaQuery.of(context).size.width <= 550
+              ? 2
+              : true &&
+                      MediaQuery.of(context).size.width <= 750 &&
+                      MediaQuery.of(context).size.width > 550
+                  ? 3
+                  : true &&
+                          MediaQuery.of(context).size.width > 750 &&
+                          MediaQuery.of(context).size.width <= 950
+                      ? 4
+                      : 5,
+          mainAxisExtent: kIsWeb
+              ? MediaQuery.of(context).size.width / 1.75
+              : MediaQuery.of(context).size.width / 1,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+        ),
+        itemCount: sortedList.length,
+        itemBuilder: (context, index) {
+          sortedList.shuffle();
+          final sortedItem = sortedList[index];
+
+          return OpenContainer(
+            closedBuilder: (BuildContext context, void Function() action) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.network(
+                        sortedItem.image,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height / 3.2,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(sortedItem.name, overflow: TextOverflow.ellipsis),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/logos/star.png", width: 13, height: 13),
+                        Text(sortedItem.rating.toString()),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "${sortedItem.price} so'm",
+                            style: const TextStyle(decoration: TextDecoration.lineThrough),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "${sortedItem.discount} so'm",
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                saveProduct = !saveProduct;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    backgroundColor: saveProduct ? null : Colors.red,
+                                    content: Text(saveProduct
+                                        ? "Product is added Succesfully"
+                                        : "Product is removed from the list"),
+                                  ),
+                                );
+                              },
+                              icon: Image.asset("assets/logos/shopping-bag2.png",
+                                  width: 30, height: 30, color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            },
+            openBuilder: (BuildContext context, void Function({Object? returnValue}) action) {
+              return SizedBox(
+                child: ListView(
+                  children: [
+                    AppBar(
+                        centerTitle: true,
+                        title: Text("${sortedItem.categoryName} Categoriyasi",
+                            textScaler: const TextScaler.linear(1.3),
+                            style: const TextStyle(
+                                fontSize: 16, textBaseline: TextBaseline.ideographic)),
+                        forceMaterialTransparency: true),
+                    Center(
+                      child: Image.network(
+                        sortedItem.image,
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height / 1.5,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Row(
+                              children: [
+                                Image.asset("assets/logos/star.png", width: 13, height: 13),
+                                Text(
+                                    "${sortedItem.rating} ( 7803 baho ) ${sortedItem.count} ta buyurtma"),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                              saveProduct = !saveProduct;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: saveProduct ? null : Colors.red,
+                                  content: Text(saveProduct
+                                      ? "Product is added Succesfully"
+                                      : "Product is removed from the list"),
+                                ),
+                              );
+                            },
+                            icon: Image.asset("assets/logos/shopping-bag2.png",
+                                width: 30, height: 30, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Text(
+                        sortedItem.name,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Text("${sortedItem.discount} so'm / birlik",
+                              style: const TextStyle(color: Color(0xFF7000FE), fontSize: 21)),
+                          const Gap(20),
+                          Text(
+                            "${sortedItem.price} so'm",
+                            style: TextStyle(
+                                color: Colors.grey[900],
+                                fontSize: 13,
+                                decoration: TextDecoration.lineThrough),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(3),
+                                  child: Container(
+                                    color: const Color(0xFF7000FE),
+                                    child: const Text("Ekskluziv",
+                                        style: TextStyle(color: Colors.white)),
+                                  ),
+                                ),
+                                const Gap(3),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(3),
+                                  child: Container(
+                                    color: const Color(0xFFFCB0D4),
+                                    child: const Text("Sevimli tovarlar",
+                                        style: TextStyle(color: Colors.white)),
+                                  ),
+                                ),
+                                const Gap(3),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(3),
+                                  child: Container(
+                                    color: const Color(0xFF3B007D),
+                                    child:
+                                        const Text("Aksiya", style: TextStyle(color: Colors.white)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text("Sotuvchi:"),
+                          Text(sortedItem.categoryName),
+                          Row(
+                            children: [
+                              const Text("Yetkazib"),
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showAdaptiveDialog(
+                                          barrierColor: Colors.transparent,
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return const AboutDialog(children: [Text("Info")]);
+                                          });
+                                    });
+                                  },
+                                  icon: const Icon(Icons.info))
+                            ],
+                          ),
+                          const Text("berish:"),
+                          const Text("1 kun, bepul"),
+                          const Divider(),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10, top: 10),
+                      child: Text("Mahsulot haqida qisqacha:"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(sortedItem.desc.toString(), textAlign: TextAlign.start),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10.0, top: 10, bottom: 10),
+                      child: Text("O'xshash Maxsulotlar", style: TextStyle(fontSize: 25)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        child: GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: MediaQuery.of(context).size.width <= 550
+                                ? 2
+                                : true &&
+                                        MediaQuery.of(context).size.width <= 750 &&
+                                        MediaQuery.of(context).size.width > 550
+                                    ? 3
+                                    : true &&
+                                            MediaQuery.of(context).size.width > 750 &&
+                                            MediaQuery.of(context).size.width <= 950
+                                        ? 4
+                                        : 5,
+                            mainAxisExtent: kIsWeb
+                                ? MediaQuery.of(context).size.height / 1.75
+                                : MediaQuery.of(context).size.height / 2.25,
+                            crossAxisSpacing: 12,
+                            mainAxisSpacing: 12,
+                          ),
+                          itemCount: filteredList.length,
+                          itemBuilder: (context, index) {
+                            return OpenContainer(
+                              closedBuilder: (BuildContext context, action) {
+                                final item = filteredList[index];
+                                item.categoryName = itemName;
+                                print("close builder $itemName");
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Center(
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(5),
+                                        child: Image.network(
+                                          item.image,
+                                          width: MediaQuery.of(context).size.width,
+                                          height: MediaQuery.of(context).size.height / 3.5,
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(item.name, overflow: TextOverflow.ellipsis),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Row(
+                                        children: [
+                                          Image.asset("assets/logos/star.png",
+                                              width: 13, height: 13),
+                                          Text(item.rating.toString()),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Column(
+                                        children: [
+                                          Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              "${item.price} so'm",
+                                              style: const TextStyle(
+                                                  decoration: TextDecoration.lineThrough),
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                "${item.discount} so'm",
+                                              ),
+                                              IconButton(
+                                                onPressed: () {
+                                                  ScaffoldMessenger.of(context)
+                                                      .hideCurrentSnackBar();
+                                                  saveProduct = !saveProduct;
+                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                    SnackBar(
+                                                      backgroundColor:
+                                                          saveProduct ? null : Colors.red,
+                                                      content: Text(saveProduct
+                                                          ? "Product is added Succesfully"
+                                                          : "Product is removed from the list"),
+                                                    ),
+                                                  );
+                                                },
+                                                icon: Image.asset("assets/logos/shopping-bag2.png",
+                                                    width: 30, height: 30, color: Colors.grey),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                              openBuilder: (BuildContext context,
+                                  void Function({Object? returnValue}) action) {
+                                final item = filteredList[index];
+                                item.categoryName = itemName;
+                                print("open builder $itemName");
+                                return SizedBox(
+                                  child: ListView(
+                                    children: [
+                                      AppBar(
+                                          centerTitle: true,
+                                          title: Text("${item.categoryName} Categoriyasi",
+                                              textScaler: const TextScaler.linear(1.3),
+                                              style: const TextStyle(
+                                                  fontSize: 16,
+                                                  textBaseline: TextBaseline.ideographic)),
+                                          forceMaterialTransparency: true),
+                                      Center(
+                                        child: Image.network(
+                                          item.image,
+                                          width: double.infinity,
+                                          height: MediaQuery.of(context).size.height / 1.5,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 30, horizontal: 20),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              flex: 2,
+                                              child: Row(
+                                                children: [
+                                                  Image.asset("assets/logos/star.png",
+                                                      width: 13, height: 13),
+                                                  Text(
+                                                      "${item.rating} ( 7803 baho ) ${item.count} ta buyurtma"),
+                                                ],
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {
+                                                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                                saveProduct = !saveProduct;
+                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                  SnackBar(
+                                                    backgroundColor:
+                                                        saveProduct ? null : Colors.red,
+                                                    content: Text(saveProduct
+                                                        ? "Product is added Succesfully"
+                                                        : "Product is removed from the list"),
+                                                  ),
+                                                );
+                                              },
+                                              icon: Image.asset("assets/logos/shopping-bag2.png",
+                                                  width: 30, height: 30, color: Colors.grey),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Text(
+                                        item.name,
+                                        style: const TextStyle(fontSize: 20),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Row(
+                                              children: [
+                                                Container(
+                                                  color: const Color(0xFF7000FE),
+                                                  child: const Text("Ekskluziv",
+                                                      style: TextStyle(color: Colors.white)),
+                                                ),
+                                                Container(
+                                                  color: const Color(0xFFFCB0D4),
+                                                  child: const Text("Sevimli tovarlar",
+                                                      style: TextStyle(color: Colors.white)),
+                                                ),
+                                                Container(
+                                                  color: const Color(0xFF3B007D),
+                                                  child: const Text("Aksiya",
+                                                      style: TextStyle(color: Colors.white)),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

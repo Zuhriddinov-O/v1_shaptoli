@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../classes/products.dart';
 import '../../../widgets/app_bar_for_category_items.dart';
@@ -63,7 +64,7 @@ class _BogPageState extends State<BogPage> {
                                       MediaQuery.of(context).size.width <= 950
                                   ? 4
                                   : 5,
-                      mainAxisExtent: MediaQuery.of(context).size.height / 1.75,
+                      mainAxisExtent:  kIsWeb ? MediaQuery.of(context).size.width / 1.75 : MediaQuery.of(context).size.width / 1,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),
@@ -80,7 +81,7 @@ class _BogPageState extends State<BogPage> {
                                 child: Image.network(
                                   item.image,
                                   width: MediaQuery.of(context).size.width,
-                                  height: MediaQuery.of(context).size.height / 2.9,
+                                  height: MediaQuery.of(context).size.height / 3.2,
                                   fit: BoxFit.fill,
                                 ),
                               ),
