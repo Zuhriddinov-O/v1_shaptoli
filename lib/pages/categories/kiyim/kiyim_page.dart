@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../classes/products.dart';
 import '../../../widgets/app_bar_for_category_items.dart';
@@ -31,7 +32,55 @@ class _KiyimPageState extends State<KiyimPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarForCategoryItems(),
+      appBar: AppBar(
+        title: CupertinoTextField(
+          smartDashesType: SmartDashesType.enabled,
+          textCapitalization: TextCapitalization.sentences,
+          smartQuotesType: SmartQuotesType.enabled,
+          decoration: BoxDecoration(
+            border: null,
+            color: Colors.grey[100],
+            borderRadius: BorderRadius.circular(10),
+          ),
+          cursorColor: Colors.grey,
+          placeholder: "Mahsulot va toifalarni qidirish",
+          style: GoogleFonts.oxygen(),
+          placeholderStyle: const TextStyle(color: Colors.black87, fontSize: 17),
+          prefix: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(
+              CupertinoIcons.search,
+              color: Colors.grey,
+              size: 27,
+            ),
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(top: 8, right: 8, bottom: 8),
+            child: IconButton(
+              onPressed: () {},
+              icon: Image.asset("assets/images/slider_icon.png"),
+            ),
+          ),
+        ],
+        bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(90),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                    padding: EdgeInsets.only(top: 8, left: 12),
+                    child: Text("Kiyimlar",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 27))),
+                Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Text("${filteredList.length} tovar",
+                        style: TextStyle(color: Colors.grey, fontSize: 18))),
+                const Divider(thickness: 0.5),
+              ],
+            )),
+      ),
       backgroundColor: CupertinoColors.white,
       body: RefreshIndicator(
         color: Colors.blue,
@@ -41,13 +90,6 @@ class _KiyimPageState extends State<KiyimPage> {
         },
         child: ListView(
           children:  [
-            const Padding(
-                padding: EdgeInsets.only(top: 8, left: 12),
-                child: Text("Kiyimlar", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 27))),
-            Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text("${filteredList.length} ta tovar", style: TextStyle(color: Colors.grey, fontSize: 18))),
-            const Divider(thickness: 0.5),
             Padding(
               padding: const EdgeInsets.only(left: 10,right: 10),
               child: SizedBox(
