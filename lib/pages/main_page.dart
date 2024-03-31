@@ -278,6 +278,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             singleChildScrollView(context),
+            const Gap(7,color: Colors.transparent),
             Container(
               height: 750,
               width: double.infinity,
