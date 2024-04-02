@@ -28,9 +28,9 @@ class _MainPageState extends State<MainPage> {
   PageController pageController = PageController(
     initialPage: 0,
   );
-  List<Product> foundProducts = [];
 
   late String itemName = "gozallik";
+  List<Product> foundProducts = [];
 
   @override
   void initState() {
@@ -295,7 +295,7 @@ class _MainPageState extends State<MainPage> {
                   _container2(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
