@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../cache/shared_preferences.dart';
 import '../home/home_page.dart';
 
 class IntroductionPage extends StatefulWidget {
@@ -13,21 +12,7 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
-  final Cache cache = ManagerImpl();
-
-  @override
-  void initState() {
-    getData();
-    super.initState();
-  }
-
   bool introActive = false;
-
-  void getData() async {
-    introActive = await cache.getInfo();
-    keepPage;
-    setState(() {});
-  }
 
   @override
   int index = 0;
@@ -118,15 +103,17 @@ class _IntroductionPageState extends State<IntroductionPage> {
               height: 40,
               onPressed: () {
                 setState(
-                      () {
+                  () {
                     index += 1;
-                    cache.saveInfo(index > 3 ? introActive = true : false);
+                    index > 3 ? introActive = true : false;
                     index > 3
-                        ? Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) {
-                        return const HomePage();
-                      },
-                    ))
+                        ? Navigator.of(context).push(
+                            CupertinoPageRoute(
+                              builder: (context) {
+                                return const HomePage();
+                              },
+                            ),
+                          )
                         : null;
                   },
                 );

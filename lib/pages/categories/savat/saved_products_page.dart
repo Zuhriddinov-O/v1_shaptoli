@@ -1,6 +1,4 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:v2shaptoli/classes/products.dart';
@@ -14,27 +12,13 @@ class SavatPage extends StatefulWidget {
 }
 
 class _SavatPageState extends State<SavatPage> {
-  List savedProductsList = [];
   bool productIsHave = true;
-  bool saveProduct = false;
   List<Product> foundProducts = [];
-  late String itemName = "gozallik";
-  List<Product> filteredList = [];
   List<Product> ratedList = [];
 
   @override
   void initState() {
-    for (var element in productList) {
-      if (element.isLiked == true) {
-        savedProductsList.add(element);
-      }
-    }
     foundProducts = productList;
-    for (var element in productList) {
-      if (element.categoryName == itemName) {
-        filteredList.add(element);
-      }
-    }
     for (var element in productList) {
       if (element.rating >= 4.5) {
         ratedList.add(element);
@@ -119,4 +103,5 @@ class _SavatPageState extends State<SavatPage> {
             ),
     );
   }
+
 }
