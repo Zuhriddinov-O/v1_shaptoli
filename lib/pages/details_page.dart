@@ -1,5 +1,4 @@
 import 'package:animations/animations.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -9,7 +8,7 @@ import 'package:v2shaptoli/classes/products.dart';
 import '../cache/sql_helper.dart';
 
 class DetailsPage extends StatefulWidget {
-  DetailsPage({super.key, required this.products});
+  const DetailsPage({super.key, required this.products});
 
   final Product products;
 
@@ -31,8 +30,6 @@ class _DetailsPageState extends State<DetailsPage> {
     setState(() {});
   }
 
-  bool saveProduct = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +37,7 @@ class _DetailsPageState extends State<DetailsPage> {
         foregroundColor: Colors.black,
         centerTitle: true,
         forceMaterialTransparency: true,
-        title: Text(widget.products.categoryName ?? ""),
+        title: Text("${widget.products.categoryName} categoriyasi"),
       ),
       body: Center(
         child: SizedBox(
@@ -74,7 +71,8 @@ class _DetailsPageState extends State<DetailsPage> {
                         if (_isLiked == false) {
                           _isLiked = true;
                           SqlHelper.saveSign(Favorites(
-                              id: widget.products.id,
+                              id: null,
+                              algorithm: widget.products.id,
                               name: widget.products.name,
                               price: widget.products.price,
                               discount: widget.products.discount,
@@ -287,11 +285,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                         IconButton(
                                           onPressed: () {
                                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                            saveProduct = !saveProduct;
+                                            _isLiked = !_isLiked;
                                             ScaffoldMessenger.of(context).showSnackBar(
                                               SnackBar(
-                                                backgroundColor: saveProduct ? null : Colors.red,
-                                                content: Text(saveProduct
+                                                backgroundColor: _isLiked ? null : Colors.red,
+                                                content: Text(_isLiked
                                                     ? "Product is added Succesfully"
                                                     : "Product is removed from the list"),
                                               ),
@@ -348,11 +346,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                       IconButton(
                                         onPressed: () {
                                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                          saveProduct = !saveProduct;
+                                          _isLiked = !_isLiked;
                                           ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
-                                              backgroundColor: saveProduct ? null : Colors.red,
-                                              content: Text(saveProduct
+                                              backgroundColor: _isLiked ? null : Colors.red,
+                                              content: Text(_isLiked
                                                   ? "Product is added Succesfully"
                                                   : "Product is removed from the list"),
                                             ),

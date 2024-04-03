@@ -2,13 +2,12 @@ import "package:sqflite/sqflite.dart" as sql;
 import "package:sqflite/sql.dart";
 import "package:v2shaptoli/classes/favorites.dart";
 
-
 class SqlHelper {
   static Future<void> createTable(sql.Database database) async {
     database.execute("""
      CREATE TABLE items(
-     algorithm INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-     id INTEGER NOT NULL,
+     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+     algorithm INTEGER NOT NULL,
      name TEXT NOT NULL,
      price INTEGER NOT NULL,
      discount INTEGER NOT NULL,
@@ -23,7 +22,7 @@ class SqlHelper {
   static Future<sql.Database> db() async {
     return sql.openDatabase(
       "items.db",
-      version: 7,
+      version: 9,
       onCreate: (sql.Database database, int version) async {
         return createTable(database);
       },
@@ -41,7 +40,7 @@ class SqlHelper {
       final maps = await data.query('items');
       print(maps);
       return maps.map((e) => Favorites.fromJson(e)).toList();
-    } catch(e) {
+    } catch (e) {
       print(e);
       return [];
     }
@@ -49,12 +48,12 @@ class SqlHelper {
 
   static Future<void> deleteFavorites(int? id) async {
     final data = await SqlHelper.db();
-    await data.delete("items", where: "id = ?", whereArgs: ["$id"]);
+    await data.delete("items", where: "algorithm = ?", whereArgs: ["$id"]);
   }
 
   static Future<void> updatePhoto(int? id, Favorites favorites) async {
     final data = await SqlHelper.db();
-    await data.update("items", favorites.toJson(), where: "algorithm = ?", whereArgs: ["$id"]);
+    await data.update("items", favorites.toJson(), where: "number = ?", whereArgs: ["$id"]);
   }
 
   static Future<void> clear() async {
@@ -65,10 +64,10 @@ class SqlHelper {
   static Future<Favorites?> getById(int? id) async {
     try {
       final data = await SqlHelper.db();
-      final list = await data.query("items", where: "id = ?", whereArgs: ["$id"]);
-      final item=list[0];
+      final list = await data.query("items", where: "algorithm = ?", whereArgs: ["$id"]);
+      final item = list[0];
       return Favorites.fromJson(item);
-    } catch(e) {
+    } catch (e) {
       return null;
     }
   }

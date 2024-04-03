@@ -1,4 +1,5 @@
 class Product {
+  int algorithm;
   int id;
   String name;
   double price;
@@ -12,6 +13,7 @@ class Product {
 
   Product(
       {required this.id,
+      required this.algorithm,
       required this.name,
       required this.price,
       required this.discount,
@@ -21,38 +23,39 @@ class Product {
       required this.image,
       required this.categoryName,
       required this.desc});
-
-  Product.fromJson(Map<String, dynamic> json)
-      : id = json["id"],
-        name = json["name"],
-        price = json["price"],
-        discount = json["discount"],
-        count = json["count"],
-        isLiked = json["isLiked"],
-        rating = json["rating"],
-        image = json["image"],
-        categoryName = json["categoryName"],
-        desc = json["desc"];
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data["id"];
-    data["name"];
-    data["price"];
-    data["discount"];
-    data["count"];
-    data["isLiked"];
-    data["rating"];
-    data["image"];
-    data["categoryName"];
-    data["desc"];
-    return data;
-  }
+//
+// Product.fromJson(Map<String, dynamic> json)
+//     : id = json["id"],
+//       name = json["name"],
+//       price = json["price"],
+//       discount = json["discount"],
+//       count = json["count"],
+//       isLiked = json["isLiked"],
+//       rating = json["rating"],
+//       image = json["image"],
+//       categoryName = json["categoryName"],
+//       desc = json["desc"];
+//
+// Map<String, dynamic> toJson() {
+//   final Map<String, dynamic> data = Map<String, dynamic>();
+//   data["id"];
+//   data["name"];
+//   data["price"];
+//   data["discount"];
+//   data["count"];
+//   data["isLiked"];
+//   data["rating"];
+//   data["image"];
+//   data["categoryName"];
+//   data["desc"];
+//   return data;
+// }
 }
 
 List<Product> productList = [
   Product(
       id: 0,
+      algorithm: 0,
       name: "Redmi Note 13 Pro 8/256 GB",
       price: 2300000,
       discount: 2100000,
@@ -73,6 +76,7 @@ List<Product> productList = [
       isLiked: true),
   Product(
       id: 1,
+      algorithm: 1,
       name: "Xiaomi Poco F5 12/512 GB",
       price: 5000000,
       discount: 4800000,
@@ -91,6 +95,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 2,
+      algorithm: 2,
       name: "Xiaomi Poco F5 Pro 12/512 GB",
       price: 7000000,
       discount: 6500000,
@@ -109,6 +114,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 3,
+      algorithm: 3,
       name: "Samsung S23+ 12/256 GB",
       price: 10000000,
       discount: 9500000,
@@ -122,6 +128,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 4,
+      algorithm: 4,
       name: "Samsung S24 Ultra 12/1 TB",
       price: 18000000,
       discount: 17500000,
@@ -135,6 +142,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 5,
+      algorithm: 5,
       name: "Infinix Zero 30 6/128 GB",
       price: 4000000,
       discount: 3500000,
@@ -159,6 +167,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 6,
+      algorithm: 6,
       name: "Infinix Hot 40i 4/128 GB",
       price: 4000000,
       discount: 2500000,
@@ -181,6 +190,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 7,
+      algorithm: 7,
       name: "iPhone 13 128/256 GB",
       price: 10000000,
       discount: 9500000,
@@ -199,6 +209,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 8,
+      algorithm: 8,
       name: "Xiaomi 14/14 Pro 12/512 GB",
       price: 12000000,
       discount: 11500000,
@@ -212,6 +223,7 @@ List<Product> productList = [
       isLiked: false),
   Product(
       id: 9,
+      algorithm: 9,
       name: "iPhone 15 Pro/Pro Max 512/1 TB",
       price: 17000000,
       discount: 15500000,
@@ -232,6 +244,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 10,
       id: 10,
       name: "Nike Air-zoom 38-43",
       price: 450000,
@@ -245,6 +258,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 11,
       id: 11,
       name: "Ayollar Krosovkalari GRN",
       price: 225000,
@@ -258,6 +272,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 12,
       id: 12,
       name: "Krassovkalar erkaklar uchun 36-43",
       price: 400000,
@@ -271,6 +286,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 13,
       id: 13,
       name: "Krossovkalar adidas ayollar uchun HOOPS 2.0 MID",
       price: 1287000,
@@ -284,6 +300,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 14,
       id: 14,
       name: "Krossovkalar Nike Downshifter, 12 DD9293-001",
       price: 2500000,
@@ -297,6 +314,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 15,
       id: 15,
       name: "Ayollar uchun shippaklar Voices Chinelo Avolto",
       price: 1155000,
@@ -310,6 +328,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 16,
       id: 16,
       name: "Erkaklar shippaklari",
       price: 100000,
@@ -323,6 +342,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 17,
       id: 17,
       name: "Erkaklar uchun kedalar, cheshka, sport DANMX",
       price: 130000,
@@ -336,6 +356,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 18,
       id: 18,
       name: "Ayollar uchun kundalik krossovkalar 36-41",
       price: 349000,
@@ -349,6 +370,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 19,
       id: 19,
       name: "Bolalar krossovkalari Shine 7Saber",
       price: 580000,
@@ -362,6 +384,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 20,
       id: 20,
       name: "Og'il bolalar uchun tolstovka Futurino",
       price: 150000,
@@ -375,6 +398,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 21,
       id: 21,
       name: "Sport kostyumi, o'g'il bolalar uchun",
       price: 260000,
@@ -388,6 +412,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 22,
       id: 22,
       name: "Futbolka-polo finka Playowo, o'g'il bolalar uchun",
       price: 115000,
@@ -401,6 +426,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 23,
       id: 23,
       name: "Joggerlar shimlari, trikotaj, o'g'il bolalar va qizlar uchun",
       price: 69000,
@@ -414,6 +440,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 24,
       id: 24,
       name: "Chaqaloqlar uchun vellur kiyim to'plami, 6 - 12 oy uchun",
       price: 60000,
@@ -427,6 +454,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 25,
       id: 25,
       name: "Bolajonlar uchun kombinezonlar",
       price: 69000,
@@ -440,6 +468,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 26,
       id: 26,
       name: "Ayollar futbolkasi Selfie, bosma bilan",
       price: 149000,
@@ -453,6 +482,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 27,
       id: 27,
       name: "Ayollar uchun sport kostyumi Fayz-M",
       price: 200000,
@@ -466,6 +496,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 28,
       id: 28,
       name: "Qizlar va o'g'il bolalar uchun jilet, kapyushon bilan, 70-130 sm",
       price: 210000,
@@ -479,6 +510,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 29,
       id: 29,
       name: "Erkaklar uchun triko-joggerlari, sport, kundalik uchun, manjetli",
       price: 198000,
@@ -492,6 +524,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 30,
       id: 30,
       name: "Garri Potter, Rosmen. 8 ta kitob to'plami sovg'a qutisida",
       price: 699000,
@@ -505,6 +538,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 31,
       id: 31,
       name: "Graviti Folz, Dnevnik 3",
       price: 230000,
@@ -518,6 +552,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 32,
       id: 32,
       name:
           "Yetti majlis, Hikmatlar, Ichingdagi ichindadur, Tasavvufiy hikoyalar, Jaloliddin Rumiy",
@@ -532,6 +567,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 33,
       id: 33,
       name: "Rasululloh sollallohu alayhi vasallamning ahli ayollari",
       price: 180000,
@@ -545,6 +581,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 34,
       id: 34,
       name: "Ibodati Islomiya. Ahmad Hodiy Maqsudiy",
       price: 120000,
@@ -558,6 +595,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 35,
       id: 35,
       name: "Vse zakonchitsya na nas, Kolin Guver",
       price: 150000,
@@ -569,6 +607,7 @@ List<Product> productList = [
       desc: ["Yumshoq muqova  315 bet  Qog'oz rangi: oq  Kitob Russ tilida"],
       isLiked: false),
   Product(
+      algorithm: 36,
       id: 36,
       name: "Portret Doriana Greya, Oskar Uayl'd",
       price: 64000,
@@ -582,6 +621,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 37,
       id: 37,
       name: "Hakan O'zkan: Voz kechilmas ayol bo'lish",
       price: 148000,
@@ -595,6 +635,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 38,
       id: 38,
       name: "Ibodati islomiya, Ahmad Hodiy Maqsudiy, Islom Dini ga umumiy ta'rif Ali Tantoviy",
       price: 120000,
@@ -608,6 +649,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 39,
       id: 39,
       name: "4000 essential english words 1 2 3 4 5 6 Uzbek translations",
       price: 79000,
@@ -621,6 +663,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 40,
       id: 40,
       name: "Ryukzak-sumka noutbuk va hujjatlar uchun, USB chiqishi bilan",
       price: 350000,
@@ -640,6 +683,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 41,
       id: 41,
       name: "Chamadon polipropilendan + g'ilof sovg'aga",
       price: 510000,
@@ -660,6 +704,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 42,
       id: 42,
       name: "Marjonli tasbeh, 33 dona",
       price: 33000,
@@ -673,6 +718,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 43,
       id: 43,
       name: "Smart uzuk zikr uchun, metall, elektron tasbeh, Zikr Ring Lux, Umeox Iqibla",
       price: 639000,
@@ -686,6 +732,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 44,
       id: 44,
       name: "Ayollar uchun milliy ro'mol sharf GoldSilk",
       price: 145000,
@@ -699,6 +746,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 45,
       id: 45,
       name: "Arab raqamli Uzuklar",
       price: 25000,
@@ -712,6 +760,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 46,
       id: 46,
       name: "Sport sumkasi DreamTravel",
       price: 500000,
@@ -725,6 +774,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 47,
       id: 47,
       name: "Zargarlik buyumlari uchun sayohat g'ilofi",
       price: 200000,
@@ -738,6 +788,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 48,
       id: 48,
       name: "Sayohat uchun bo'yin yostig'i",
       price: 100000,
@@ -751,6 +802,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 49,
       id: 49,
       name: "Berushi qutida, qulay uyqu uchun",
       price: 85000,
@@ -764,6 +816,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 50,
       id: 50,
       name: "Qo'llar uchun antibakterial suyuq sovun Oila tanlovi, 500 ml",
       price: 12000,
@@ -777,6 +830,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 51,
       id: 51,
       name: "Tish pastasi Colgate, Misvak ekstrakti bilan, 100 ml",
       price: 15000,
@@ -790,6 +844,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 52,
       id: 52,
       name: "Sochlar uchun shampun Clear Men 3 turda, 380 ml",
       price: 48000,
@@ -803,6 +858,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 53,
       id: 53,
       name: "Ayollar uchun dezodorant sprey Rexona 3 turda, 150 ml",
       price: 31000,
@@ -816,6 +872,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 54,
       id: 54,
       name: "Johnson's Baby Regular hojatxona sovuni, 100 g",
       price: 15000,
@@ -829,6 +886,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 55,
       id: 55,
       name: "Ayollar uchun gigienik prokladkalar Free Style Atirgul Sensitive №10",
       price: 11000,
@@ -840,6 +898,7 @@ List<Product> productList = [
       desc: ["Ayollar uchun gigienik prokladkalar Free Style Atirgul Sensitive No 10"],
       isLiked: false),
   Product(
+      algorithm: 56,
       id: 56,
       name: "Qo'goz sochiqlar Oila tanlovi, 2 qatlamli, 2 dona",
       price: 13000,
@@ -853,6 +912,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 57,
       id: 57,
       name:
           "Shampun soch uchun sulfatsiz Keratine Queen Moisturizing Protein Brazilian Shampoo, 800 ml",
@@ -867,6 +927,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 58,
       id: 58,
       name: "Yuz uchun gialuron gel Nivea Care, 100 ml",
       price: 62000,
@@ -880,6 +941,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 59,
       id: 59,
       name: "Taroq - soch va soqol uchun kapalak, burish uchun mashq pichog'i",
       price: 150000,
@@ -893,6 +955,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 60,
       id: 60,
       name: "Elektrogril Tefal GC724D12",
       price: 5928000,
@@ -906,6 +969,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 61,
       id: 61,
       name:
           "Bioaktivator Doctor Robik109 septiklar qazilgan chuqurlar va hovli hojatxonalari uchun, 75 g",
@@ -920,6 +984,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 62,
       id: 62,
       name: "Yuqori bosimli moyka BAMBOO DY-2000",
       price: 2500000,
@@ -936,6 +1001,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 63,
       id: 63,
       name: "Termal sumka, sumka kamarli muzlatgich, 5.8 l, 8 l, 12 l",
       price: 100000,
@@ -949,6 +1015,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 64,
       id: 64,
       name: "Sug'orish uchun shlang, mo'jizaviy shlang, uzaytiriladigan, cho'ziladigan, 60 m",
       price: 180000,
@@ -962,6 +1029,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 65,
       id: 65,
       name: "Biogumus tabbiy Sunny Day",
       price: 75000,
@@ -975,6 +1043,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 66,
       id: 66,
       name: "Uy va sabzavot bog'i uchun 3 tasi 1 da bo'lgan bog' qo'l asboblari to'plami",
       price: 250000,
@@ -988,6 +1057,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 67,
       id: 67,
       name: "Maishiy rezinali kislota uchun qo'lqop",
       price: 30000,
@@ -1003,6 +1073,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 69,
       id: 68,
       name: "Yuqori bosimli yuvish uskunasi P1/398/399",
       price: 2650000,
@@ -1016,6 +1087,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 69,
       id: 69,
       name: "O'simliklar va ko'chatlar uchun fitolampa",
       price: 400000,
@@ -1029,6 +1101,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 70,
       id: 70,
       name: "Dunyo xaritasi va O'zbekiston xaritasi",
       price: 70000,
@@ -1040,6 +1113,7 @@ List<Product> productList = [
       desc: ["Turi: jismoniy", "Hajmi: 1010x690 mm", "Masshtab: 1:37 M"],
       isLiked: false),
   Product(
+      algorithm: 71,
       id: 71,
       name: "Penal bolalar uchun, sumka pardoz va hujjatlar uchun",
       price: 17000,
@@ -1054,6 +1128,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 72,
       id: 72,
       name: "Kozoynak lupa Big Vision, kattalashtiruvchi",
       price: 280000,
@@ -1067,6 +1142,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 73,
       id: 73,
       name: "Markerlar 5 dona, matnni yoritgichlar, 5 rang to'plami",
       price: 55000,
@@ -1083,6 +1159,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 74,
       id: 74,
       name: "Namunalarni chop etish uchun rolikli raqamli shtamp",
       price: 70000,
@@ -1096,6 +1173,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 75,
       id: 75,
       name: "24 dan 120 gacha сhizish uchun markerlar",
       price: 285000,
@@ -1111,6 +1189,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 76,
       id: 76,
       name: "Hunar ko'rsatuvchi ruchka Penspinning, spinner tryuklar uchun",
       price: 53000,
@@ -1124,6 +1203,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 77,
       id: 77,
       name: "Rangli stikerlar eslatmalar uchun, rangli xatcho'plar",
       price: 25000,
@@ -1137,6 +1217,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 78,
       id: 78,
       name: "Nano skotch ikki tomonlama, shaffof, 5 sm * 3 m",
       price: 80000,
@@ -1150,6 +1231,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 79,
       id: 79,
       name: "Lavx kitob uchun tagkursi, naqshlik",
       price: 250000,
@@ -1166,6 +1248,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 80,
       id: 80,
       name: "Kungaboqar yog'i Oila tanlovi, tozalangan va xidsizlantirilgan, 900 ml",
       price: 15000,
@@ -1179,6 +1262,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 81,
       id: 81,
       name: "Gazlangan ichimlik Coca-Cola Classic, 1.5 litr",
       price: 15000,
@@ -1192,6 +1276,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 82,
       id: 82,
       name: "Kishmish Oila tanlovi, 200 g",
       price: 17000,
@@ -1205,6 +1290,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 83,
       id: 83,
       name: "Bargak Oila tanlovi, 200 g",
       price: 23000,
@@ -1218,6 +1304,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 84,
       id: 84,
       name: "Bu'gdoy uni Oila tanlovi, oliy nav, 1 kg",
       price: 13000,
@@ -1231,6 +1318,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 85,
       id: 85,
       name: "Konfetlar ''Сливочная Му'', 1 kg",
       price: 99000,
@@ -1247,6 +1335,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 86,
       id: 86,
       name: "Makaron mahsuloti Makfa, spirallar, 400 g",
       price: 10000,
@@ -1260,6 +1349,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 87,
       id: 87,
       name: "Gazlangan ichimlik Pepsi, 2 litr",
       price: 15000,
@@ -1273,6 +1363,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 88,
       id: 88,
       name: "Жаклин shokolad va qulupnay bilan qoplangan xushbo'y frantsuz zefiri, 1kg",
       price: 126000,
@@ -1295,6 +1386,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 89,
       id: 89,
       name: "Seld Za Rodinu, yog'da Atlantika tabiiy, 185 g",
       price: 19000,
@@ -1308,6 +1400,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 90,
       id: 90,
       name: "Rasm chizish to'plami: markerlar, flomasterlar, bo'yoqlar bilan, qizlar uchun sovg'a",
       price: 298000,
@@ -1321,6 +1414,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 91,
       id: 91,
       name: "Kolleksiya Lomo kartalari K-pop Stray Kids, 55 dona",
       price: 97000,
@@ -1332,6 +1426,7 @@ List<Product> productList = [
       desc: ["Karta o'lchami: 8.6 * 5.7 sm", "Bir paketdagi kartalar soni: 55 dona"],
       isLiked: false),
   Product(
+      algorithm: 92,
       id: 92,
       name: "Stol o'yini UNO, Uno Dos, Uno wild kartalari, Uno flip, Minecraft, Mafiya",
       price: 98000,
@@ -1345,6 +1440,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 93,
       id: 93,
       name: "Stol o'yini tushgan minora Jenga",
       price: 150000,
@@ -1358,6 +1454,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 94,
       id: 94,
       name: "Bo'r va marker bilan chizish uchun magnit doska NikaKids, ikki tomonlama molbert",
       price: 400000,
@@ -1371,6 +1468,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 95,
       id: 95,
       name: "Bolalar uchun grafik LCD plansheti rasm chizish uchun, stilusli, elektron doska 8.5",
       price: 50000,
@@ -1384,6 +1482,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 96,
       id: 96,
       name: "Plastik to'plam 3D ruchka uchun PLA, 10 rang, 5 m",
       price: 148000,
@@ -1397,6 +1496,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 97,
       id: 97,
       name: "Металлический степлер + кнопки",
       price: 200000,
@@ -1410,6 +1510,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 98,
       id: 98,
       name: "Atlasli tasma, tikuvchilik, sovg'alar va bezaklar uchun dekorativ",
       price: 10000,
@@ -1423,6 +1524,7 @@ List<Product> productList = [
       ],
       isLiked: false),
   Product(
+      algorithm: 99,
       id: 99,
       name: "Mavzuli rasm Sky Store 'Joker', pastki ramka bilan xolst, 40 * 50 sm, 30 ranglar",
       price: 189000,

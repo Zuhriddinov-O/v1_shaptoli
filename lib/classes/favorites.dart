@@ -1,18 +1,20 @@
 class Favorites {
-  int id;
-  String name;
-  double price;
-  double discount;
-  int count;
-  double rating;
-  bool isLiked = false;
-  String image;
-  String categoryName;
-  List<String> desc;
+  int? id;
+  int? algorithm;
+  String? name;
+  double? price;
+  double? discount;
+  int? count;
+  double? rating;
+  bool? isLiked = false;
+  String? image;
+  String? categoryName;
+  List<String>? desc;
 
   Favorites(
       {required this.id,
       required this.name,
+      required this.algorithm,
       required this.price,
       required this.discount,
       required this.count,
@@ -24,6 +26,7 @@ class Favorites {
 
   Favorites.fromJson(Map<String, dynamic> json)
       : id = json["id"],
+        algorithm = json["algorithm"],
         name = json["name"],
         price = json["price"],
         discount = json["discount"],
@@ -37,6 +40,7 @@ class Favorites {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data["id"];
+    data["algorithm"];
     data["name"];
     data["price"];
     data["discount"];
