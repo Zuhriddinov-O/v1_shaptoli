@@ -9,15 +9,13 @@ import '../cache/sql_helper.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key, required this.products});
-
   final Product products;
-
   @override
   State<DetailsPage> createState() => _DetailsPageState();
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  bool _isLiked = false;
+  bool _liked = false;
 
   @override
   void initState() {
@@ -26,7 +24,7 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 
   void _checkState() async {
-    _isLiked = await SqlHelper.getById(widget.products.id) != null;
+    _liked = await SqlHelper.getById(widget.products.id) != null;
     setState(() {});
   }
 
@@ -68,30 +66,28 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     IconButton(
                       onPressed: () {
-                        if (_isLiked == false) {
-                          _isLiked = true;
+                        if (_liked == false) {
+                          _liked = true;
                           SqlHelper.saveSign(Favorites(
-                              id: null,
+                              id: widget.products.id,
                               algorithm: widget.products.id,
                               name: widget.products.name,
                               price: widget.products.price,
                               discount: widget.products.discount,
-                              count: widget.products.count,
-                              isLiked: widget.products.isLiked,
+                              isLiked: "true",
                               rating: widget.products.rating,
                               image: widget.products.image,
-                              categoryName: widget.products.categoryName,
-                              desc: widget.products.desc));
+                              categoryName: widget.products.categoryName,));
                         } else {
-                          _isLiked = false;
+                          _liked = false;
                           SqlHelper.deleteFavorites(widget.products.id);
                         }
                         setState(() {});
                         ScaffoldMessenger.of(context).hideCurrentSnackBar();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            backgroundColor: _isLiked ? null : Colors.red,
-                            content: Text(_isLiked
+                            backgroundColor: _liked ? null : Colors.red,
+                            content: Text(_liked
                                 ? "Product is added Succesfully"
                                 : "Product is removed from the list"),
                           ),
@@ -285,11 +281,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                         IconButton(
                                           onPressed: () {
                                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                            _isLiked = !_isLiked;
+                                            _liked = !_liked;
                                             ScaffoldMessenger.of(context).showSnackBar(
                                               SnackBar(
-                                                backgroundColor: _isLiked ? null : Colors.red,
-                                                content: Text(_isLiked
+                                                backgroundColor: _liked ? null : Colors.red,
+                                                content: Text(_liked
                                                     ? "Product is added Succesfully"
                                                     : "Product is removed from the list"),
                                               ),
@@ -346,11 +342,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                       IconButton(
                                         onPressed: () {
                                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                          _isLiked = !_isLiked;
+                                          _liked = !_liked;
                                           ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
-                                              backgroundColor: _isLiked ? null : Colors.red,
-                                              content: Text(_isLiked
+                                              backgroundColor: _liked ? null : Colors.red,
+                                              content: Text(_liked
                                                   ? "Product is added Succesfully"
                                                   : "Product is removed from the list"),
                                             ),

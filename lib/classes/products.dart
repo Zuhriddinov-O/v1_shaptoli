@@ -6,7 +6,7 @@ class Product {
   double discount;
   int count;
   double rating;
-  bool isLiked = false;
+  String isLiked = "false";
   String image;
   String categoryName;
   List<String> desc;
@@ -23,33 +23,6 @@ class Product {
       required this.image,
       required this.categoryName,
       required this.desc});
-//
-// Product.fromJson(Map<String, dynamic> json)
-//     : id = json["id"],
-//       name = json["name"],
-//       price = json["price"],
-//       discount = json["discount"],
-//       count = json["count"],
-//       isLiked = json["isLiked"],
-//       rating = json["rating"],
-//       image = json["image"],
-//       categoryName = json["categoryName"],
-//       desc = json["desc"];
-//
-// Map<String, dynamic> toJson() {
-//   final Map<String, dynamic> data = Map<String, dynamic>();
-//   data["id"];
-//   data["name"];
-//   data["price"];
-//   data["discount"];
-//   data["count"];
-//   data["isLiked"];
-//   data["rating"];
-//   data["image"];
-//   data["categoryName"];
-//   data["desc"];
-//   return data;
-// }
 }
 
 List<Product> productList = [
@@ -73,7 +46,7 @@ List<Product> productList = [
         "Kameralar: 200 MP asosiy + 8 MP ultra keng burchakli + 2 MP makro + 16 MP old",
         "Displey: 6.67 dyuymli AMOLED, 2400 x 1080, 120 Gts"
       ],
-      isLiked: true),
+      isLiked: "false"),
   Product(
       id: 1,
       algorithm: 1,
@@ -92,7 +65,7 @@ List<Product> productList = [
         "Android 13, upgradable to Android 14, HyperOS",
         "Qualcomm SM7475-AB Snapdragon 7+ Gen 2 (4 nm)"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 2,
       algorithm: 2,
@@ -111,7 +84,7 @@ List<Product> productList = [
         "Android 13, upgradable to Android 14, HyperOS",
         "Qualcomm SM7475-AB Snapdragon 7+ Gen 2 (4 nm)"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 3,
       algorithm: 3,
@@ -125,7 +98,7 @@ List<Product> productList = [
       desc: [
         "Size (Height x Width x Depth) · Galaxy S23 Ultra. 163.4 x 78.1 x 8.9 · Galaxy S23 Plus. 157.8 x 76.2 x 7.6 · Galaxy S23. 146.3 x 70.9 x 7.6."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 4,
       algorithm: 4,
@@ -139,7 +112,7 @@ List<Product> productList = [
       desc: [
         "Samsung Galaxy S24 Ultra ; Internal, 256GB 12GB RAM, 512GB 12GB RAM, 1TB 12GB RAM ; Quad, 200 MP, f/1.7, 24mm (wide), 1/1.3, 0.6µm, multi-directional PDAF,"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 5,
       algorithm: 5,
@@ -164,7 +137,7 @@ List<Product> productList = [
         "Processor: MediaTek Helio G99",
         "Сканер отпечатка пальца на экране"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 6,
       algorithm: 6,
@@ -187,7 +160,7 @@ List<Product> productList = [
         "1612 x 720, IPS, 90 Hz ",
         "Batareya hajmi: 5000 mA/soat"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 7,
       algorithm: 7,
@@ -206,7 +179,7 @@ List<Product> productList = [
         "Asosiy kamera: MPix 12/12",
         "Ekran turi Super: Retina XDR"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 8,
       algorithm: 8,
@@ -220,7 +193,7 @@ List<Product> productList = [
       desc: [
         "Xiaomi 14 – hamma uzoq kutgan yuqori texnologik smartfon. U barcha parametrlar bo‘yicha juda lol qoldiradi - korpus materiallaridan boshlab va simsiz quvvatlashni qo‘llab-quvvatlash bilan yakunlab. Xiaomi 14 smarftoni Snapdragon 8 Gen 3 top protsessordagi jahonda birinchi smartfon bo‘ldi"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       id: 9,
       algorithm: 9,
@@ -242,7 +215,7 @@ List<Product> productList = [
         "Ekranni yangilash tezligi - 120 Hz",
         "Asosiy kameraning xususiyatlari - 48 MP"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 10,
       id: 10,
@@ -256,7 +229,7 @@ List<Product> productList = [
       desc: [
         "Air Zoom Vapor futbol butsaları - bu maydonning har qanday turidagi tezlik va qulaylik uchun mo'ljallangan yuqori samarali futbol poyabzali. Nike'ning Zoom Air texnologiyasi bilan jihozlangan, bu butsalarga ajoyib yumshoqlik va tezkor harakatlanish imkonini beradi. Yuqori qismi yengil va nafas olish materiallaridan tayyorlangan, bu esa to'pni boshqarishni yaxshilaydi va o'yin vaqtida qulaylikni ta'minlaydi. Poyafzalning tag qismi turli futbol qoplamalari bilan a'lo darajada yopishishni ta'minlash uchun ishlab chiqarilgan."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 11,
       id: 11,
@@ -270,7 +243,7 @@ List<Product> productList = [
       desc: [
         "GRN brendi Janubi-Sharqiy Osiyoda 4-o'rinni egallaydi, TOP sifat segmentiga kiradi.  GRN brendi Osiyodagi eng qadimiy poyabzal va kiyim-kechak brendlaridan biri hisoblanadi - u 1978 yilda tashkil etilgan.  GRN brendining ushbu mamlakatlarda 12 000 dan ortiq shaxsiy chakana savdo doʻkonlari mavjud kabi: Xitoy, Yaponiya, Vetnam, Malayziya, Marokash, Yugoslaviya, Sloveniya, Polsha.  GRN brendi yuqori sifatli kiyim-kechak va poyabzal ishlab chiqarishga qaratilgan  sport va kundalik kiyim.   Ishlab chiqarilgan poyafzallarning umumiy hajmi yiliga 20 000 000 juftni tashkil etadi, bu esa          GRN brendi nafaqat Osiyoda, balki dunyodagi eng yirik brendlardan biridir. GRN mahsulotlarining o'ziga xos xususiyatlari yuqori sifatli, qulay naqsh va uslubdir."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 12,
       id: 12,
@@ -284,7 +257,7 @@ List<Product> productList = [
       desc: [
         "Iziki erkaklar krossovkalari bu har bir erkakning garderobida bo'lishi kerak bo'lgan ko'p qirrali poyabzal. Nafas oladigan, yozgi, sport krossovkalari uzoq yurish, yugurish yoki sport bilan shug'ullanish paytida yengillik va qulaylik hissini beradi. Ushbu krossovkalar yuqori sifatli materialdan tayyorlangan. Taglik polivinilxloriddan tayyorlangan bo'lib, u ishonchli ushlab turishni ta'minlaydi, shuningdek yemirilishga bardoshli."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 13,
       id: 13,
@@ -298,7 +271,7 @@ List<Product> productList = [
       desc: [
         "Odamlar Adidas'dan biror narsa sotib olayotganda, ular mahsulotning yuqori sifati va moda ko'rinishiga ishonch hosil qilishadi. Adidas Hoops 2.0 Mid bundan mustasno emas. Ushbu krossovkalar zamonaviy, qulay va bardoshli bo'lib, ular hamyonbop narxda sotiladi. Ular uzoq yurish uchun juda mos keladi va har qanday kiyim bilan birlashtirish oson. Qishki adidas Hoops 2.0 basketbol poyabzali. Eko-mo'ynali astarli baland model sizni sovuq havoda isitadi. Yengil va yumshoq EVA o'rta taglik va ichki taglik qulaylikni ta'minlaydi. To'rli ustki qismi juda nafas oladi. Tortishish uchun rezina taglik. Chidamlilik uchun rezina barmoq va tovon."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 14,
       id: 14,
@@ -312,7 +285,7 @@ List<Product> productList = [
       desc: [
         "Nike Downshifter 12 dd9293-001 krossovkalarida yugurish mashqlarining birinchi qadamlarini qo'ying. Krossovkalar kamida 20% qayta ishlangan materialdan tayyorlangan bo'lib, ular qo'llab-quvvatlash va barqaror moslikni ta'minlaydi va engillik hissi mashqdan yig'ilishga o'tishni osonlashtiradi. Yuqori qismidagi to'r engillik va nafas olish hissi yaratadi. To'r yuguruvchilarning fikr-mulohazalari asosida asosiy zonalarga joylashtirildi va kerak bo'lganda sovutishni ta'minladi. Oyoqning o'rta qismidagi elastik tasma tufayli barqarorlikni his eting. O'rta taglik orqali o'ta yumshoq ko'pik har qadamda oyoqni yostiqlashga yordam beradi. Ko'tarilgan balandlik yugurish paytida yumshoqroq his qilishni anglatadi. Kauchuk taglik oyoqlaringizni yo'lakdan mahkam ushlab turish uchun tutqichga ega. Oyoq barmoqlari va grommetsdagi teri chidamlilikni ta'minlaydi. Mesh materiali oyoqning o'rta qismida va oyoq barmog'ida ichki qismlarni namoyish etadi"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 15,
       id: 15,
@@ -326,7 +299,7 @@ List<Product> productList = [
       desc: [
         "TM Voices-ayollar uchun shippaklar! Ovozlar-Braziliya moda brendi. Qulay va engil sandallar har qanday kiyim bilan mukammal birlashadi - plyaj kiyimlari va ofis kiyimlari bilan. Voices Collection-bu zamonaviy ekologik toza materiallar, Braziliya lazzati va eng yuqori sifatini aks ettiruvchi zamonaviy dizayn."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 16,
       id: 16,
@@ -340,7 +313,7 @@ List<Product> productList = [
       desc: [
         "Eva materialidan tayyorlangan terlik ish va kundalik yurish uchun juda mos keladi. Agar siz uni jinsi shimlar, shortilar va keng futbolka bilan kiysangiz, ular sizga boshqalardan ajralib turadigan ajoyib ko'rinish beradi. Uzoq yurish va aylanma yo'llarga borganingizda, shippaklarning yengilligi va yumshoqligi sizga qulaylik beradi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 17,
       id: 17,
@@ -354,7 +327,7 @@ List<Product> productList = [
       desc: [
         "Erkaklar uchun kedalar - Kiyishga qulay, Yengil, Zamonaviy, Milliy brend, Sifatli maxsulot"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 18,
       id: 18,
@@ -368,7 +341,7 @@ List<Product> productList = [
       desc: [
         "Ayollar uchun kundalik krassovkalar, sifati a'lo darajada, yumshoq, qulay, ayoqni charchatmaydi. Bahor-kuz mavsumlari uchun mo'ljallangan. Kunlik sayr va sport bilan shug'ullanganingizda siz uchun ajoyib tanlov. Zamonaviy va chiroyli ko'rinishga ega va ortiqcha keraksiz bezaklardan holi krassovkalar ham yoshlarga, ham yoshi kattalarga mos tushadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 19,
       id: 19,
@@ -382,7 +355,7 @@ List<Product> productList = [
       desc: [
         "Yengil va qulay krossovkalar. Model nafas oladigan materialdan tayyorlangan, mukammal tamponlamaga ega va ishqalanishdan himoya qiladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 20,
       id: 20,
@@ -396,7 +369,7 @@ List<Product> productList = [
       desc: [
         " O'g'il bolalar uchun Hoody - bu qulay va zamonaviy ko'rinish uchun eng zo'r tanlovdir. Mahsulotlarimiz issiqlikni mukammal darajada saqlaydigan va terining nafas olishiga imkon beradigan yuqori sifatli materialdan tayyorlangan. Tana tolasiga yumshoq va yoqimli, hatto sovuq mavsumda ham to'liq qulaylik yaratadi. Hodi kundalik kiyim uchun juda mos keladi. Ular jinsi shimlar bilan mukammal birlashtirilgan, shuning uchun sport shimlari zamonaviy va ajoyib tasvirni yaratadi. 100% paxta"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 21,
       id: 21,
@@ -410,7 +383,7 @@ List<Product> productList = [
       desc: [
         "Bu sehrli kombinatsiya yumshoq, nafas oladigan va bardoshli - dunyoni kashf qilishni yaxshi ko'radigan faol bolalar uchun juda mos keladi! Luxtex kolleksiyasidagi har bir kiyim bizning mohir hunarmandlarimiz tikuvdan tortib pardozlashgacha bo‘lgan har bir detalga e’tibor berib, yuqori sifatni ta’minlaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 22,
       id: 22,
@@ -424,7 +397,7 @@ List<Product> productList = [
       desc: [
         "Qisqa yengli va trikotaj yoqali engil polo ko'ylak. U oddiy trikotaj pikedan qilingan va ko'krakdagi tugmalar bilan mahkamlanadi. O'g'il bolalar uchun kalta yengli, nafas oluvchi matoli va tik yoqali zamonaviy polo ko'ylak. O‘smirlar uchun nafis futbolka 100% yumshoq paxtadan tikilgan bo‘lib, o‘ziga xos to‘qimali polo mato – Pike matoning cho‘zilmasligi, g‘altakga aylanmasligi, mato sifatini yo‘qotmagan holda uzoq vaqt kiyish imkonini beradi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 23,
       id: 23,
@@ -438,7 +411,7 @@ List<Product> productList = [
       desc: [
         "Bolalar uchun elastik jogger shimlari o'g'il bolalar va qizlar uchun mos keladi. Bouffant va cho'ntaklarsiz engil trikotaj shimlar yumshoq paxta matosidan (95% paxta, 5% elastan) tayyorlangan bo'lib, ular uzoq vaqt xizmat qiladi va shunday bo'ladi. Elastan qo'shilishi tufayli o'g'il bolalar va qizlar uchun trikotaj shimlar shaklga yaxshi mos keladi va yanada bardoshli va paypoq bo'ladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 24,
       id: 24,
@@ -452,7 +425,7 @@ List<Product> productList = [
       desc: [
         "Bolalar to'plami yuqori sifatli 100% paxtali  Qulay kesimdagi bolalar uchun to'plam bolangizga maksimal qulaylikni ta'minlaydi. Sokinn rangdagi yumshoq mato bolangizni quvontiradi. ko'zni charchatmaydi To'plam universal bo'lib, uni sayr uchun va uyda kiyim sifatida ishlatilishi mumkin. Tarkibi: 100% yuqori sifatli paxta, u qayta-qayta yuvilgandan keyin ham rangi o'chmaydi, cho'zilmaydi va kichraymaydi.Yahshi cho'ziluvchanlik hisobiga bolaning qulay harakastlanishiga yordam beradi/ Yuqori sifat tufayli to'plam bola undan o'sguncha xizmat qiladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 25,
       id: 25,
@@ -466,7 +439,7 @@ List<Product> productList = [
       desc: [
         "Chaqaloqlar uchun kombinezonlar chaqaloq garderobida juda amaliy va qulay elementdir. Yumshoq, nafas oladigan, xavfsiz va yuqori sifatli paxta, undan tugmalar bilan slip tikilgan, onaga bolaning qulayligi haqida xotirjam bo'lishga imkon beradi. Yumshoqligi va elastikligi tufayli chaqaloq terisini shikastlamaydi va bezovta qilmaydi. Ergonomik naqsh va mahsulotning butun uzunligi bo'ylab tugmalar tufayli slip kostyumni yechish va kiyish oson. Bu chaqaloqning kiyimlarini istalgan vaqtda tezda almashtirish imkonini beradi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 26,
       id: 26,
@@ -480,7 +453,7 @@ List<Product> productList = [
       desc: [
         "Asosiy engil futbolka. Dumaloq yoqa, qulay bo'shashgan yenglar va katta gulli bosma. Har qanday kundalik shkafning ajoyib elementi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 27,
       id: 27,
@@ -494,7 +467,7 @@ List<Product> productList = [
       desc: [
         "Fayz-M brendining sport kostyumi-bu har kuni zamonaviy va faol modaichining shkafida bo'lishi kerak bo'lgan zamonaviy kiyimdir. Kostyum zich trikotaj matodan qilingan bo'lib, u yaxshi cho'ziladi. Kostyum sport, yugurish, yoga, bolalar bilan yurish, sayohat qilish uchun mos keladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 28,
       id: 28,
@@ -508,7 +481,7 @@ List<Product> productList = [
       desc: [
         "Qizlar va o'g'il bolalar uchun yorqin izolyatsiya qilingan yeleklar kuz va bahor ob-havosida sizni isitadi. Olib tashlanmaydigan kaput va original quloqlari bo'lgan engil va iliq yengsiz ko'ylagi har bir bolaga yoqadi"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 29,
       id: 29,
@@ -522,7 +495,7 @@ List<Product> productList = [
       desc: [
         "Sport shimlari (joggers) uy kiyimi sifatida to'g'ri keladi, shimlar sport, yurish uchun mos, shimlar bahor-kuz mavsumida kiyishga mos keladi, yugurish shimining old tomonida 2 ta cho'tkasi bor va shimlarda ham mahkamlash shnuri bo'lgan kamar bor."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 30,
       id: 30,
@@ -536,7 +509,7 @@ List<Product> productList = [
       desc: [
         "Dunyoni zabt etgan kitob, barcha yoshdagi o'quvchilar uchun adabiyot standarti, muvaffaqiyat bilan sinonimdir. J.K.Rouling hozirgi zamonning eng ko'p O'qilgan yozuvchisi. Bir necha avlodlar uchun kultga aylangan kitob. Sovg'a qutisidagi seriyaning to'liq to'plami."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 31,
       id: 31,
@@ -550,7 +523,7 @@ List<Product> productList = [
       desc: [
         "Siz sirli muallif tomonidan yozilgan xuddi shu kundalik 3 ni, ilgari ochilmagan sirlarga, hayvonlar haqidagi ma'lumotlarga va uyqusiragan Gravity Falls shahridagi voqealar bilan bog'liq sirlarga to'la rangli va tasvirlangan xazinani ushlab turasiz. Siz Fordning fojiali hikoyasini, Blandin qaerga ketganini va 52-o'lchov nima ekanligini va katakli platypusni qanday jalb qilishni o'rganishingiz kerak. Ko'pgina qorong'u kuchlar ushbu kitobni egallashni xohlashadi, shuning uchun uni sizdan tortib olishga harakat qilayotganlardan ehtiyot bo'ling (ayniqsa, ularning ko'zlari sariq rangda porlayotgan bo'lsa!) Umuman olganda-yoqimli o'qish!"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 32,
       id: 32,
@@ -565,7 +538,7 @@ List<Product> productList = [
       desc: [
         "Ichindagi ichindadur (Kirill) - Betlar soni - 272 Yetti majlis (Kirill) - Betlar soni - 192 Mavlonodan qalbga malham hikmatlar. Tasavvufiy hikoyalar (Kirill) - Betlar soni - 176 Hikmatlar (Lotin) - Betlar soni - 192 Umar Hayyom Ishqing tuproq qilgay (Lotin) - Betlar soni - 96 Yumshoq muqovalik"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 33,
       id: 33,
@@ -579,7 +552,7 @@ List<Product> productList = [
       desc: [
         "Rasululloh sollallohu alayhi vasallamning ahli ayollari, O'zbek tilida Kitob Diniy kitob"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 34,
       id: 34,
@@ -593,7 +566,7 @@ List<Product> productList = [
       desc: [
         "Bu kitob mamlakatimiz musulmonlari orasida asosiy diniy qo‘llanma sifatida tanilgan va mashhurdir. Unda “Ahli sunna val” jamoatining, xususan, Hanafiy mazhabining shariat qoidalari tushuntirilgan. Asar asrimiz boshlarida o‘sha davrning til me’yorlariga mos ibora va iboralar yordamida yozilgan. "
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 35,
       id: 35,
@@ -605,7 +578,7 @@ List<Product> productList = [
       image: "https://images.uzum.uz/chsaosjltlh4bk4koqd0/original.jpg",
       categoryName: "kitoblar",
       desc: ["Yumshoq muqova  315 bet  Qog'oz rangi: oq  Kitob Russ tilida"],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 36,
       id: 36,
@@ -619,7 +592,7 @@ List<Product> productList = [
       desc: [
         "Jahon adabiyotidagi eng mashhur romanlardan biri, 1891 yilda nashr etilishi ingliz jamiyatida janjal keltirib chiqardi. Tanqidchilar uni axloqsiz asar sifatida qoraladilar, ammo roman oddiy kitobxonlar tomonidan katta qiziqish bilan qabul qilindi. U insoniyatning abadiy savollarini ko'taradi - hayotning mazmuni, qilingan ishlar uchun javobgarlik, go'zallikning buyukligi, sevgining ma'nosi va gunohning halokatli kuchi haqida."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 37,
       id: 37,
@@ -633,7 +606,7 @@ List<Product> productList = [
       desc: [
         "Voz kechilmas ayolning munosabatlari doimo oqilonalikka asoslanadi va bunday munosabatlar doirasida rostgo‘y va samimiy bo‘ladi. Iltifotlidir, bo‘lib o‘tganlarni egmay, bukmay boricha so‘zlaydi. O‘rganishga va o‘zini rivojlantirishga qarshi emasligi, aksincha buni bajonidil qabul qila olish tabiati tufayli qarshisidagi odamni diqqat bilan tinglaydi. Ha, mana shu sabablar tufayli voz kechilmas ayollar o‘zaro munosabatlarda doimo muvaffaqiyatga erishadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 38,
       id: 38,
@@ -647,7 +620,7 @@ List<Product> productList = [
       desc: [
         "Ushbu kitob mamlakatimiz musulmonlari orasida asosiy diniy qo'llanma sifatida tanilgan va mashhurdir. U Ahl as-sunna val jamoasining shariat qoidalarini, ayniqsa hanafiylar mazhabini tushuntiradi. Asar bizning asrimizning boshlarida o'sha davrning til me'yorlariga mos keladigan iboralar va iboralar bilan yozilgan. Tabiiyki, bu parcha zamonaviy talaba uchun biroz qiyin. Shuning uchun biz muallifning rivoyat tilini biroz zamonaviylashtirishga qaror qildik. Ushbu ajoyib qo'llanma keng kitobxonlar uchun mo'ljallangan va umid qilamizki, bu maktab o'quvchilari va savodli kattalarga yoqadi.  Albatta, Alloh bizni ismonga iymon keltirguvchi bo'lsin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 39,
       id: 39,
@@ -661,7 +634,7 @@ List<Product> productList = [
       desc: [
         "4000 muhim inglizcha so'zlar oltita kitobdan iborat bo'lib, talabalarning so'z boyligini boshlang'ichdan ilg'orgacha kengaytirish uchun amaliy umumiy so'zlarga qaratilgan. Seriyada ko'plab og'zaki yoki yozma matnlarda uchraydigan so'zlarning katta foizini o'z ichiga olgan turli xil so'zlar mavjud. Shu tarzda, ushbu maqsadli so'zlarni o'zlashtirgandan so'ng, talabalar yozma va og'zaki shaklda duch kelganlarida lug'at elementlarini to'liq anglay oladilar."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 40,
       id: 40,
@@ -681,7 +654,7 @@ List<Product> productList = [
         "O'lchamlari (B * Ch * E): 41 * 12 * 28 sm",
         "Matoning tashqi qatlami suv o'tkazmaydigan"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 41,
       id: 41,
@@ -702,7 +675,7 @@ List<Product> productList = [
         "360 daraja aylanish",
         "Baquvvat, ko'p xizmat qiladi"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 42,
       id: 42,
@@ -716,7 +689,7 @@ List<Product> productList = [
       desc: [
         "Tabiiy materialdan tayyorlangan qo'lda ishlangan tasbeh. Kuchli mumli shnurda yig'ilgan. Tasbeh nafaqat ibodatlarni hisoblash uchun ishlatiladi. Barmoqlaringiz bilan sanalangan payt tashvishlarni yengillashtirishga yoki diqqatni muayyan fikrlar yoki harakatlarga qaratishga yordam beradi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 43,
       id: 43,
@@ -730,7 +703,7 @@ List<Product> productList = [
       desc: [
         "Elektron tasbeh, halqali soat yoki aqlli uzuk. Erkak va ayollar uchun elektron tasbeh,barmoq halqasi Zikr Ring Lux zikr tashlayotganda kundalik sanashni osonlashtiradi, bu esa xatolik ehtimolini kamaytiradi. Uzuklar musulmonlar uchun zamonaviy raqamli aksessuardir. 0,49 dyuymli OLED-ekranga ega tasbih halqasida soat, tasbih sanash, namoz vaqti va zaryad darajasini aks ettiradi. Musulmon uzuk modeli bardoshli metalldan qilingan. Tugmali aqlli hisoblagich 33, 66, 99, 100-bosishda vibratsiya beradi. Namoz haqida o'z vaqtida xabar beradi - vibratsiya ko'rinishidagi 5 ta eslatma. 3-5 kunlik ishlash uchun yuqori quvvatli batareya."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 44,
       id: 44,
@@ -744,7 +717,7 @@ List<Product> productList = [
       desc: [
         "GoldSilk brendidan ayollar va qizlar uchun uzun sharflar. Millylik va zamonaviylikni o’zida uyg’unlashtira olgan ushbu sharflarga ega bo’lgan har bir ayol-qizlar o’zlarini malikalardek his qilishadi. Sharfning uzunligi va ajoyib ko’rinishi uni har qanday kiyimlar bilan uyg’unlikda foydalanish imkonini beradi. Bundan tashqari, uchrashuvlar, bayramlar va odatiy kundagi ko’rinishingizga ham ajoyib qo’shimcha bo’ladi. Yaqinlaringizga sovg’a qilish uchun ham ajoyib tanlov."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 45,
       id: 45,
@@ -758,7 +731,7 @@ List<Product> productList = [
       desc: [
         "Har qanday kiyim uslubiga mos keladi;  Material: zanglamaydigan po'lat  Ideal sovg'a bo'ladi;  Zamonaviy dizayn;  Aylanadigan tasma;  Baquvvat metell;"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 46,
       id: 46,
@@ -772,7 +745,7 @@ List<Product> productList = [
       desc: [
         "Yengil ko'p funktsiyali sumka sport sumkasi yoki keng kundalik model sifatida ishlatilishi mumkin. Xaltaning hajmi mashg'ulot va sayohat uchun kerak bo'lgan hamma narsani qo'yish imkonini beradi. Xaltaning burishmaydigan, namlik o'tkazmaydigan matoni tozalash va yuvish oson, tez quriydi. Ho'l narsalar uchun bo'linma mavjud bo'lib, unga ho'l sochiq, mayo, dush jeli qo'yishingiz mumkin va quruq narsalar namlanadi deb xavotirlanmang. Oyoq kiyimlari uchun bo'linma mavjud. Xalta ikkita qulay tutqich bilan jihozlangan. Fermuarli yon cho'ntak, shuningdek, sumkaning old qismida bitta keng cho'ntak bor."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 47,
       id: 47,
@@ -786,7 +759,7 @@ List<Product> productList = [
       desc: [
         "Ushbu aksessuar sayohat paytida zargarlik buyumlarini xavfsiz saqlashni xohlaydigan ayollar uchun mo'ljallangan. Bu sizning barcha zargarlik buyumlaringizni bir joyda saqlashi mumkin bo'lgan tashkilotchi bo'lib, shikastlanish yoki yo'qotishdan qochadi. Ushbu aksessuar ko'p joy egallamaydi va uni hatto kichik sumkada ham osongina joylashtirish mumkin. Ushbu sovg'ani olgan ayol zargarlik buyumlari ishonchli himoya ostida ekanligiga va har doim qo'lida ekanligiga amin bo'lishi mumkin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 48,
       id: 48,
@@ -800,7 +773,7 @@ List<Product> productList = [
       desc: [
         "G'ilof o'lchami: 17,5 * 11 sm  Material: PVX gardish  Yostiq sayohat paytida uzoq vaqt davomida o'tirishdan bo'yin va elkangizdagi stressni olib tashlashga yordam beradi  Yostiq bilan to'ldiring, siz nasos va qopqoqni sotib olishingiz mumkin (rang tanlamasdan)  O'lchamlari: 29 * 27 * 10 sm"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 49,
       id: 49,
@@ -814,7 +787,7 @@ List<Product> productList = [
       desc: [
         "Xitoyda ishlab chiqarilgan shaxsiy himoya vositalari orasida dunyoda etakchi bo'lgan IMeBoBo kompaniyasidan juda yumshoq berushilar. Quloq berushilarining materiali yumshoq va elastik ko'pikli poliuretan bo'lib, quloq kanalining anatomik xususiyatlariga osongina moslashadi. "
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 50,
       id: 50,
@@ -828,7 +801,7 @@ List<Product> productList = [
       desc: [
         "“Oila tanlovi” antibakterial suyuq sovun butun oila salomatligini asrashning ishonchli usuli hisoblanadi. Maxsus formula bo'yicha ishlab chiqilgan sovun bakteriyalar va mikroblarni samarali ravishda yo'q qiladi va qo'llaringiz uchun mukammal gigienani ta'minlaydi. Sovunni qo'llash oson, ko'p miqdorda ko'pik hosil qiladi va tezda suv bilan yuviladi, yoqimli hid qoldiradi.  Balanslangan pH quruqlik va tirnash xususiyati oldini oladi, sovun terini quritmaydi yoki shikastlamaydi, shuning uchun qo'llarni tez-tez yuvish uchun idealdir."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 51,
       id: 51,
@@ -842,7 +815,7 @@ List<Product> productList = [
       desc: [
         "Misvok ekstrakti antibakterial ta'siri bilan mashhur. Colgate Miswak tish pastasi ftorid va kaltsiy formulasiga ega, tishlarning parchalanishidan samarali himoya qiladi, tish go'shti salomatligiga g'amxo'rlik qilishga yordam beradi, tish emalini mustahkamlaydi va nafasni yangilaydi. Siz tez-tez tabassum qilishingiz uchun ehtiyotkorlik bilan yaratilgan!"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 52,
       id: 52,
@@ -856,7 +829,7 @@ List<Product> productList = [
       desc: [
         "Sochlarning ifloslanishi jingalak va itoatsiz sochlarga olib kelishi mumkin. Erkaklar uchun maxsus ishlab chiqilgan CLEAR Men shampuni tarkibida kepekka qarshi faol moddalar mavjud. U bosh terisidan kir, yog' va o'lik teri hujayralarini olib tashlaydi va kepekdan himoya qiladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 53,
       id: 53,
@@ -870,7 +843,7 @@ List<Product> productList = [
       desc: [
         "Nozik teriga tavsiya etilgan yumshatuvchi va namlovchi komponentlarni o'z ichiga oladi. 48 soat davomida ter va yoqimsiz hiddan himoya qiladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 54,
       id: 54,
@@ -884,7 +857,7 @@ List<Product> productList = [
       desc: [
         "Johnson's ® bolalar sovuni chaqaloqni yumshoq his qiladigan teri uchun namlovchi moddalar bilan boyitilgan nozik terini muloyimlik bilan tozalaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 55,
       id: 55,
@@ -896,7 +869,7 @@ List<Product> productList = [
       image: "https://images.uzum.uz/ce817savtie1lhbemgag/original.jpg",
       categoryName: "gozallik",
       desc: ["Ayollar uchun gigienik prokladkalar Free Style Atirgul Sensitive No 10"],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 56,
       id: 56,
@@ -910,7 +883,7 @@ List<Product> productList = [
       desc: [
         "'Oila Tanlovi' 100% sellyuloza qog'oz sochiqlari namlikni osongina o'zlashtiradigan bardoshli qog'oz sochiqlardir. Shaxsiy gigiena uchun ham, tozalash uchun ham ajoyib."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 57,
       id: 57,
@@ -925,7 +898,7 @@ List<Product> productList = [
       desc: [
         "Noyob keratin formulasi Е vitaminini o'z ichiga oladi.  Omega - 3 va Omega-9 sochlarning namligi va elastikligini oshiradi.  Olingan tabiiy ingredientlar yog'li bosh terisini muvozanatlashtiradi va tozalaydi.  Argan va jojoba yog'lari bosh terisi va soch ildizini ichkaridan to'liq oziqlantiradi.  Kollagen-namlikni ushlab turish qobiliyatiga ega."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 58,
       id: 58,
@@ -939,7 +912,7 @@ List<Product> productList = [
       desc: [
         "Nivea-ning yangi gialuron kislotali terini parvarishi quruq, suvsizlangan, yog'li va muammoli teri uchun qutqaruvchi hisoblanadi. Gidrojelning engil, vaznsiz tuzilishi tez so'riladi va yuz terisini 24 soat davomida namlaydi. Yopishqoq yoki yog'li kino tuyg'usini qoldirmaydi. Teshiklarni berkitmaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 59,
       id: 59,
@@ -953,7 +926,7 @@ List<Product> productList = [
       desc: [
         "Stilistning qo'lida mukammal qurol,  Umumiy uzunligi: 22 sm,  Pichoq uzunligi: 10 sm,  Taxminan vazni: 100 gramm,  Mutlaqo xavfsiz,  Jinsi cho'ntagingizga osongina joylashadi va har doim qo'lingizda bo'ladi,  Zanglamaydigan po'latdan yasalgan,  Soch va soqolni tezda shakllantirish uchun juda yaxshi,  Bolalar va kattalar uchun"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 60,
       id: 60,
@@ -967,7 +940,7 @@ List<Product> productList = [
       desc: [
         "Сочный стейк любой прожарки? Легко! Умный электрогриль Tefal Optigrill+ XL GC724D12 сделает всё сам и, кроме стейка, приготовит много других блюд с помощью одной из девяти автоматических программ."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 61,
       id: 61,
@@ -982,7 +955,7 @@ List<Product> productList = [
       desc: [
         "Septik tanklar uchun bakteriyalardan foydalanish bo'yicha tavsiyalar: xaltaning tarkibini hojatxonaga to'kib tashlang va suvni ikki marta tushiring yoki to'g'ridan-to'g'ri septik idishga quying."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 62,
       id: 62,
@@ -999,7 +972,7 @@ List<Product> productList = [
         " Maksimal bosim 150 Bar",
         " Suv sarfi 420 Litr/soat" "  SHlang uunligi 8m" "  Pena sepgich"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 63,
       id: 63,
@@ -1013,7 +986,7 @@ List<Product> productList = [
       desc: [
         "Izotermik sovutgich sumkasi parkda sayr qilish, yozgi uyga sayohat qilish, piknik qilish va uzoq masofalarga sayohat qilish uchun ajralmas narsadir. Shuningdek, termal sumka oziq-ovqat idishlari va tushlik qutilarini ishga olib borish uchun qulaydir. Aqlli shakli va elkama-kamarning mavjudligi sumkani tashish jarayonini oson va qulay qiladi. Folga ichki qatlami tufayli sumka tashqi tomondan xona haroratida 3-4 soatgacha issiq/sovuq saqlashga imkon beradi va sovuq batareyalar (sovuq elementlar) bilan birgalikda ishlatilsa, sovuqni yanada uzoqroq saqlashga imkon beradi. Ichidagi mahsulotlar yomonlashmaydi va 8 soatgacha yangi bo'lib qoladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 64,
       id: 64,
@@ -1027,7 +1000,7 @@ List<Product> productList = [
       desc: [
         "Yengil, ixcham va moslashuvchan bog 'shlangi quroli bog'ni parvarish qilishda sizning ajralmas yordamchingizga aylanadi.  Ushbu shlang qulaylik, amaliylik va kuchni burama yoki tugunsiz birlashtiradi.  Bog 'shlangi engil vaznga ega, bu qulay foydalanish va qulay harakatni ta'minlaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 65,
       id: 65,
@@ -1041,7 +1014,7 @@ List<Product> productList = [
       desc: [
         "Vermikompost (vermikompost) - organik o'g'it, organik qishloq xo'jaligi chiqindilarini yomg'ir qurtlari (ko'pincha Eisenia fetida, Eisenia andrei, Dendrobaena veneta, Lumbricus rubellus) va boshqa tuproq organizmlari (zamburug'lar, bakteriyalar, aktinomitsetlar, aktinomitsetlar, zamburug'lar) ishtirokida qayta ishlash mahsuloti. artropodlar va boshqalar."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 66,
       id: 66,
@@ -1055,7 +1028,7 @@ List<Product> productList = [
       desc: [
         "Yopiq o'simliklarni parvarish qilish uchun uy, yozgi uy va bog 'uchun bog' vositasi, yozgi mavsumda ko'chat ekish, ko'rpa va gulzorlarda gullar bilan ishlash. To'plamga quyidagilar kiradi"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 67,
       id: 67,
@@ -1071,7 +1044,7 @@ List<Product> productList = [
         "Qoplama rangi - sariq",
         "Ishchi qo'lqoplari bugungi kunda eng mashhur ish kiyimlari turlaridan biri bo'lib, qo'llarni salbiy omillar ta'siridan, shuningdek, ish jarayonida ularning kuchli ifloslanishidan himoya qilishga qaratilgan.Biz sotadigan ish qo'lqoplari qo'llaringizni himoya qilish imkonini beradi. kesish va o'tkir narsalar, past va yuqori haroratlar, elektr toki urishi, kimyoviy moddalar, axloqsizlik, sirpanish va boshqa omillar."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 69,
       id: 68,
@@ -1085,7 +1058,7 @@ List<Product> productList = [
       desc: [
         "Maksimal bosim - 130 bar, Kuchlanish - 220 V, Chastota - 50 Gs, Quvvat sarfi - 2900 Vt, Samaradorlik - 9.0 L/min, Motor tezligi - 2800RPM, Og'irligi: 15-16kggacha"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 69,
       id: 69,
@@ -1099,7 +1072,7 @@ List<Product> productList = [
       desc: [
         "Fitolamp - uyda yopiq o'simliklar, sabzavotlar va ko'chatlarni etishtirish uchun foydali narsa. Fitolight quyosh rangining analogidir va o'sishni sezilarli darajada tezlashtiradi, yashil o'sishning barcha bosqichlarida foydalidir. LED o'simlik chiroqi xavfsiz, ergonomik va qulay, unda shisha yo'q. O'simlik chiroqida ultrabinafsha nurlanishining to'liq spektri mavjud bo'lib, bu sizning sevimli o'simliklaringizni hatto tunda ham etishtirishga imkon beradi. O'simliklar uchun fitolampada taymer yordamida 4 ta yoqish/o'chirish rejimi mavjud; siz uni kechasi o'rnatishingiz mumkin va ertalab u o'zini o'zi o'chiradi. O'simlik chiroqida qulay sozlash va o'rnatish tizimi mavjud. Ko'chatlar uchun fito-chiroq 50 000 soatgacha ishlatilishi mumkin. Kiyim uchun chirog'ni sotib olib, siz ko'p vaqtingizni tejaysiz."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 70,
       id: 70,
@@ -1111,7 +1084,7 @@ List<Product> productList = [
       image: "https://images.uzum.uz/cljl6gl6sfhsc0umglcg/original.jpg",
       categoryName: "kanselariya",
       desc: ["Turi: jismoniy", "Hajmi: 1010x690 mm", "Masshtab: 1:37 M"],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 71,
       id: 71,
@@ -1126,7 +1099,7 @@ List<Product> productList = [
         "A5 o'lchamdagi hujjat sumkasi",
         " Fermuarli fayllarni saqlash cho'ntagi, ofis uchun maktab materiallari, suv o'tkazmaydigan"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 72,
       id: 72,
@@ -1140,7 +1113,7 @@ List<Product> productList = [
       desc: [
         "Big Vision kattaytiruvchi ko’zoynaklar mayda narsalar bilan ishlovchilar yoki mayda xarfli matnlarni o’qiydiganlar uchun juda zarur. Chunki bu qulay ko’zoynaklar barcha harf va detallarni qiyinchiliksiz ko’rib chiqishda asqotadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 73,
       id: 73,
@@ -1157,7 +1130,7 @@ List<Product> productList = [
         "Siyoh rangining maxsus effekti: neon",
         "Chiziq qalinligi 1 dan 5 mm gacha"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 74,
       id: 74,
@@ -1171,7 +1144,7 @@ List<Product> productList = [
       desc: [
         "Maktabgacha ta'lim uchun matematikadan 100 ta amaliy savollar doirasida. Bolalar bog'chasi, nima uchun va boshlang'ich maktab o'quvchilari uchun uy ta'limi jihozlari (barcha arifmetik)"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 75,
       id: 75,
@@ -1187,7 +1160,7 @@ List<Product> productList = [
         "markerlarni ishlatishdan oldin, 45-60 daqiqa davomida har ikki tomon uchun siyohni bir tekis taqsimlash uchun to'plamni normal holatda va teskari qilib qo'ying.",
         "Ular qog'oz, kartonda chiroyli dizaynlarni yaratish uchun ishlatilishi mumkin"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 76,
       id: 76,
@@ -1201,7 +1174,7 @@ List<Product> productList = [
       desc: [
         "Mashhur penspinning (penspinning) Fashion jinnisi uchun hiyla-nayrang ruchkasi har ikki tomonda ham metall boncuklar bilan jihozlangan bo'lib, bu ajoyib muvozanatni yaratadi. Yangi boshlanuvchilar uchun ham, professional penspinnerlar uchun ham ideal"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 77,
       id: 77,
@@ -1215,7 +1188,7 @@ List<Product> productList = [
       desc: [
         "Nomi: rangli stiker Xususiyatlar: 20dona * 10 rang O'lchami 9*20 sm Xususiyatlari: O'z-o'zidan yopishtiruvchi, asosiy fikrlarni, ko'rsatkichlarni, eslatmalarni, xatcho'plarni va hokazolarni ta'kidlash uchun ishlatilishi mumkin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 78,
       id: 78,
@@ -1229,7 +1202,7 @@ List<Product> productList = [
       desc: [
         "Endi hamma narsa yopishtirilgan! Qayta foydalanish mumkin bo'lgan mashhur ikki tomonlama yopishqoq lenta ishonchli va shoshilinch tuzatish uchun eng yaxshi uy yordamchisidir. Nano lenta - sharlar, haykalchalar va squishlar uchun qalin stressga qarshi lenta - bu yangi avlod o'rnatish lentasi: juda kuchli, suv o'tkazmaydigan, shaffof va izsiz. "
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 79,
       id: 79,
@@ -1246,7 +1219,7 @@ List<Product> productList = [
         "Lavxni past qismida kichik tortma mavjud",
         "Sovg'a va Hadiya uchun juda ajoyib variant"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 80,
       id: 80,
@@ -1260,7 +1233,7 @@ List<Product> productList = [
       desc: [
         "Oila Tanlovi kungaboqar moyi – mehr bilan pishiriladigan taomlar uchun. Yuqori sifatli kungaboqar urug‘idan tayyorlangan moy vitaminlar va foydali yog‘ kislotalariga boy.  Kungaboqar moyi nozik ta'm va xushbo'y hidga ega. Bu turli xil taomlarni tayyorlash uchun juda mos keladi - qovurish, pishirish va salatlar tayyorlash uchun mos keladi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 81,
       id: 81,
@@ -1274,7 +1247,7 @@ List<Product> productList = [
       desc: [
         "Coca-Cola ichimligi eng mashhurlaridan biridir! Shirin va tetiklantiruvchi, quvnoq gaz pufakchalari va o'ziga xos ta'mi bilan u butun dunyo bo'ylab kattalar va bolalarning qalbini zabt etdi. Birinchi Coca-Cola retsepti 1886 yilda paydo bo'lgan: uni farmatsevt jon Pemberton ixtiro qilgan. O'shandan beri ichimlik formulasi sir saqlanmoqda! Kola shunchaki tetiklantiruvchi ichimlik emas. Bu ko'plab klassik kokteyllar uchun asosdir! Retro uslubidagi tadbir yoki yangi yil bayrami bo'ladimi, hech qanday partiya Coca-Cola holda bo'lmaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 82,
       id: 82,
@@ -1288,7 +1261,7 @@ List<Product> productList = [
       desc: [
         "Kishmish Oila tanlovi - bu yuqori sifatli mahsulot bo'lib, sizga quritilgan kishmish uzumining tabiiy va shirin ta'mini beradi. Ehtiyotkorlik bilan yig'ilgan va sifat nazorati ostida bo'lgan bu kishmish turli xil taomlarga qo'shimcha bo'lishni ta'minlaydi.  Mahsulot o'zining tabiiyligi va sifatini ta'kidlab, sun'iy qo'shimchalarni o'z ichiga olmaydi. Kishmish tabiiy shirin ta'mga ega bo'lib, uni yoqimli taomga aylantiradi. Kishmish bo'tqa, qandolat mahsulotlariga, salatlarga qo'shilishi yoki oddiygina xom holda iste'mol qilinishi mumkin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 83,
       id: 83,
@@ -1302,7 +1275,7 @@ List<Product> productList = [
       desc: [
         "Bargak Oila tanlovi - yuqori sifatli mahsulot bo'lib, sizga quritilgan o'rikning shirin va xushbo'y ta'mini beradi. Ehtiyotkorlik bilan yig'ilgan va sifat nazorati ostida bo'lgan bu quritilgan o'rik turli xil taomlar uchun mazali taom yoki ajoyib ingredient bo'lishni ta'minlaydi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 84,
       id: 84,
@@ -1316,7 +1289,7 @@ List<Product> productList = [
       desc: [
         "Oila tanlovi oliy navli uni - mehr bilan tayyorlanadigan taomlar uchun.  Issiq non, bulkalar, piroglar, chuchvara yoki lag'mon pishiring - ta'mi butun oilani xursand qiladi.  Nozik maydalanish darajasi va bug'doyning yumshoq navlari unni yumshoq va havodor qiladi.  Un souslar yoki kremlar uchun quyuqlashtiruvchi sifatida ishlatilishi mumkin. Yuqori novvoylik pishirish xususiyatlarida farqlanadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 85,
       id: 85,
@@ -1333,7 +1306,7 @@ List<Product> productList = [
         "  Uglevodning ozuqaviy qiymati 79 g/ 100g",
         "  Kaloriyalarning energiya qiymati (100 g. uchun) 1930 kJ / 410 kkal"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 86,
       id: 86,
@@ -1347,7 +1320,7 @@ List<Product> productList = [
       desc: [
         "Makaron xamirining klassik retsepti bo'yicha tayyorlangan tabiiy mahsulot: yuqori sifatli bug'doy uni va toza suv. Qattiq bug'doy tufayli Makfa makaronlari pishirish paytida shakli va ta'mini mukammal darajada saqlaydi. Turli xil o'lchamlar, shakllar va formatlar murakkab Gurmeler va murakkab uy bekalari uchun oshxona makonidir."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 87,
       id: 87,
@@ -1361,7 +1334,7 @@ List<Product> productList = [
       desc: [
         "Gazlangan ichimlik Pepsi, 2 l. Muqaddaslikka muhtoj bo'lmagan klassik Pepsi. Brend haqida: Pepsi Cola 1893 yilda farmatsevt C. Bradham tomonidan ixtiro qilingan afsonaviy ichimlikdir. Pepsi butun dunyoda mashhurlikka erishdi. Tarkibi: suv, bo'yoq (E150d), kislotalilik regulyatorlari (E330, E338), kofein (150 mg/l dan ko'p bo'lmagan), Pepsi lazzati. Yaroqlilik muddati: 180 kun."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 88,
       id: 88,
@@ -1384,7 +1357,7 @@ List<Product> productList = [
         "       Yog'larning ozuqaviy qiymati 5,9 g / 100 g",
         "       Kaloriyalarning energiya qiymati (100 gr. uchun) 364 kkal"
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 89,
       id: 89,
@@ -1398,7 +1371,7 @@ List<Product> productList = [
       desc: [
         "moyli seld - juda mazali va o'rtacha yog'li. Uni oddiy non bilan iste'mol qilish yoki salatlar va yonma-ovqatlarga qo'shish mumkin. Konservalangan baliq kaltsiy, yod, fosfor, natriy, kaliy va temir kabi barcha foydali iz elementlarini saqlab qoladi. Shuningdek, u B12 vitaminlari va omega-3 kislotalariga boy. Selyodka yoqimli, o'rtacha sho'r ta'mga va nozik tuzilishga ega. U organizm tomonidan oson so'riladi, uni qimmatli oqsil, vitaminlar va minerallar bilan boyitadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 90,
       id: 90,
@@ -1412,7 +1385,7 @@ List<Product> productList = [
       desc: [
         "Chamadonda ijodkorlik va rasm chizish uchun sovg'a to'plami qiz uchun mukamal tug'ilgan kun va yangi yil sovg'asidir. Yorqin ranglar va imkoniyatlar bilan to'ldirilgan ushbu to'plam yosh rassomlar uchun ijod va tikuvchilik olamida ajralmas hamrohga aylanadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 91,
       id: 91,
@@ -1424,7 +1397,7 @@ List<Product> productList = [
       image: "https://images.uzum.uz/cnlhi4g4idugcqegn7f0/original.jpg",
       categoryName: "hobbi",
       desc: ["Karta o'lchami: 8.6 * 5.7 sm", "Bir paketdagi kartalar soni: 55 dona"],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 92,
       id: 92,
@@ -1438,7 +1411,7 @@ List<Product> productList = [
       desc: [
         "UNO stol kartasi o'yini dam olishning eng oson yo'lidir. Klassik stol o'yini UNO - butun oila, bolalar, kattalar va katta kompaniya uchun javob beradi, ishtirokchilarning maksimal soni 10 ta o'yinchi. UNO o'yinida yosh chegarasi deyarli yo'q (7-99 yosh). Kirish oson - tushish mumkin emas. Xo'sh, UNO o'yinining qoidalari juda oddiy, siz ularni bir necha daqiqada tushunishingiz mumkin. Rang yoki raqamga mos keladigan kartalarni o'ynang yoki raqibingizga qarshi harakat kartasi bilan o'ynang. Bitta kartangiz qolganda, “Uno!” deb baqirishni unutmang."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 93,
       id: 93,
@@ -1452,7 +1425,7 @@ List<Product> productList = [
       desc: [
         "Yiqilgan minora stol o'yinida siz yog'och bloklardan minora qurishingiz, pastki qavatlardagi barlarni olib tashlashingiz va ularni yuqoriga ko'tarishingiz kerak. Hammasi 18 darajali minoradan boshlanadi, o'yin davomida minora ikki baravar o'sishi mumkin. Bularning barchasi sizning aniqligingizga bog'liq. Ammo ertami-kechmi minora juda beqaror bo'lib qoladi va o'yinchilardan biri minoraning o'rtasidan noto'g'ri barni olishga harakat qilib, butun tuzilmani qulab tushadi! Bu beparvo o'yinchi yutqazdi, ammo qolganlari g'alaba qozondi - siz minorani yangidan qurishni boshlashingiz mumkin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 94,
       id: 94,
@@ -1466,7 +1439,7 @@ List<Product> productList = [
       desc: [
         "Ikki tomonlama magnit doska - bu bolalar va katta yoshdagi bolalar uchun qiziqarli o'quv o'yini. Stol usti dastgohi barqaror tripod dizayniga ega, bir tomoni markerlar va magnitlar uchun magnitlangan, ikkinchisi bo'r bilan chizish uchun. Bu bolaga har bir vazifa uchun to'g'ri asbob tanlash va ijodkorligini diversifikatsiya qilish imkonini beradi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 95,
       id: 95,
@@ -1480,7 +1453,7 @@ List<Product> productList = [
       desc: [
         "8,5' LCD displeyli ixcham chizilgan planshet. Grafik chizilgan planshet-chizish texnikasini rivojlantirish uchun yaratilgan. Ish jarayonida bola ijodiy ko'nikmalarni o'rganadi, nozik vosita mahoratini o'rgatadi, qobiliyatlarni rivojlantiradi va atrofdagi dunyoni o'rganadi."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 96,
       id: 96,
@@ -1494,7 +1467,7 @@ List<Product> productList = [
       desc: [
         "3D ruchka uchun PLA plastmassa to'plami innovatsion ijodkorlik uchun zarur to'plamdir. Xususiyatlari tufayli maxsus plastmassa yuqori harorat ta'sirida kerakli shaklni osongina oladi va tayyor mahsulotlar yoki chizmalar silliq yuzasi tufayli ajoyib ko'rinadi. Boy ranglar palitrasi kelajakdagi egasiga o'z hunarmandchiligini jonlantirish ga yordam beradi. To'plamga har xil rangdagi plastmassa kiradi, har bir skeynda - 5 m.  To'plamdagi ranglar tasodifiy ravishda uchraydi va rasmdan farq qilishi mumkin."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 97,
       id: 97,
@@ -1508,7 +1481,7 @@ List<Product> productList = [
       desc: [
         "Больше не нужен бежать в мастерскую или в ателье, чтоб установить металлическую кнопку. "
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 98,
       id: 98,
@@ -1522,7 +1495,7 @@ List<Product> productList = [
       desc: [
         "Saten lenta sovg'alarni o'rash, qo'l san'atlari, dekoratsiya, qo'l san'atlari uchun mo'ljallangan, shuningdek, gulchilikda guldastalarni qadoqlash va bezash uchun ishlatiladi. Bunga qo'shimcha ravishda, ichki aksessuarlar, soch turmagi, bosh tasmalari, scrapbooking yaratish uchun foydalaning."
       ],
-      isLiked: false),
+      isLiked: "false"),
   Product(
       algorithm: 99,
       id: 99,
@@ -1536,5 +1509,5 @@ List<Product> productList = [
       desc: [
         "Raqamlar bo'yicha rasmlar-bu dam olish, ko'ngil ochish, sevimli mashg'ulotlar, ijodkorlik, uy dekoratsiyasi, sovg'a va rasm chizishni o'rganishni birlashtirgan mahsulot."
       ],
-      isLiked: false),
+      isLiked: "false"),
 ];
